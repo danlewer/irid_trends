@@ -1,0 +1,377 @@
+GOR_NAME,LA03_CODE,LA03_NAME,LA09_CODE,LA09_NAME,LAD10CD,LAD10NM
+London,00AA,City of London,00AA,City of London,E09000001,City of London
+London,00AB,Barking and Dagenham,00AB,Barking and Dagenham,E09000002,Barking and Dagenham
+London,00AC,Barnet,00AC,Barnet,E09000003,Barnet
+London,00AD,Bexley,00AD,Bexley,E09000004,Bexley
+London,00AE,Brent,00AE,Brent,E09000005,Brent
+London,00AF,Bromley,00AF,Bromley,E09000006,Bromley
+London,00AG,Camden,00AG,Camden,E09000007,Camden
+London,00AH,Croydon,00AH,Croydon,E09000008,Croydon
+London,00AJ,Ealing,00AJ,Ealing,E09000009,Ealing
+London,00AK,Enfield,00AK,Enfield,E09000010,Enfield
+London,00AL,Greenwich,00AL,Greenwich,E09000011,Greenwich
+London,00AM,Hackney,00AM,Hackney,E09000012,Hackney
+London,00AN,Hammersmith and Fulham,00AN,Hammersmith and Fulham,E09000013,Hammersmith and Fulham
+London,00AP,Haringey,00AP,Haringey,E09000014,Haringey
+London,00AQ,Harrow,00AQ,Harrow,E09000015,Harrow
+London,00AR,Havering,00AR,Havering,E09000016,Havering
+London,00AS,Hillingdon,00AS,Hillingdon,E09000017,Hillingdon
+London,00AT,Hounslow,00AT,Hounslow,E09000018,Hounslow
+London,00AU,Islington,00AU,Islington,E09000019,Islington
+London,00AW,Kensington and Chelsea,00AW,Kensington and Chelsea,E09000020,Kensington and Chelsea
+London,00AX,Kingston upon Thames,00AX,Kingston upon Thames,E09000021,Kingston upon Thames
+London,00AY,Lambeth,00AY,Lambeth,E09000022,Lambeth
+London,00AZ,Lewisham,00AZ,Lewisham,E09000023,Lewisham
+London,00BA,Merton,00BA,Merton,E09000024,Merton
+London,00BB,Newham,00BB,Newham,E09000025,Newham
+London,00BC,Redbridge,00BC,Redbridge,E09000026,Redbridge
+London,00BD,Richmond upon Thames,00BD,Richmond upon Thames,E09000027,Richmond upon Thames
+London,00BE,Southwark,00BE,Southwark,E09000028,Southwark
+London,00BF,Sutton,00BF,Sutton,E09000029,Sutton
+London,00BG,Tower Hamlets,00BG,Tower Hamlets,E09000030,Tower Hamlets
+London,00BH,Waltham Forest,00BH,Waltham Forest,E09000031,Waltham Forest
+London,00BJ,Wandsworth,00BJ,Wandsworth,E09000032,Wandsworth
+London,00BK,Westminster,00BK,Westminster,E09000033,Westminster
+North West,00BL,Bolton,00BL,Bolton,E08000001,Bolton
+North West,00BM,Bury,00BM,Bury,E08000002,Bury
+North West,00BN,Manchester,00BN,Manchester,E08000003,Manchester
+North West,00BP,Oldham,00BP,Oldham,E08000004,Oldham
+North West,00BQ,Rochdale,00BQ,Rochdale,E08000005,Rochdale
+North West,00BR,Salford,00BR,Salford,E08000006,Salford
+North West,00BS,Stockport,00BS,Stockport,E08000007,Stockport
+North West,00BT,Tameside,00BT,Tameside,E08000008,Tameside
+North West,00BU,Trafford,00BU,Trafford,E08000009,Trafford
+North West,00BW,Wigan,00BW,Wigan,E08000010,Wigan
+North West,00BX,Knowsley,00BX,Knowsley,E08000011,Knowsley
+North West,00BY,Liverpool,00BY,Liverpool,E08000012,Liverpool
+North West,00BZ,St. Helens,00BZ,St. Helens,E08000013,St. Helens
+North West,00CA,Sefton,00CA,Sefton,E08000014,Sefton
+North West,00CB,Wirral,00CB,Wirral,E08000015,Wirral
+Yorkshire and The Humber,00CC,Barnsley,00CC,Barnsley,E08000016,Barnsley
+Yorkshire and The Humber,00CE,Doncaster,00CE,Doncaster,E08000017,Doncaster
+Yorkshire and The Humber,00CF,Rotherham,00CF,Rotherham,E08000018,Rotherham
+Yorkshire and The Humber,00CG,Sheffield,00CG,Sheffield,E08000019,Sheffield
+North East,00CH,Gateshead,00CH,Gateshead,E08000020,Gateshead
+North East,00CJ,Newcastle upon Tyne,00CJ,Newcastle upon Tyne,E08000021,Newcastle upon Tyne
+North East,00CK,North Tyneside,00CK,North Tyneside,E08000022,North Tyneside
+North East,00CL,South Tyneside,00CL,South Tyneside,E08000023,South Tyneside
+North East,00CM,Sunderland,00CM,Sunderland,E08000024,Sunderland
+West Midlands,00CN,Birmingham,00CN,Birmingham,E08000025,Birmingham
+West Midlands,00CQ,Coventry,00CQ,Coventry,E08000026,Coventry
+West Midlands,00CR,Dudley,00CR,Dudley,E08000027,Dudley
+West Midlands,00CS,Sandwell,00CS,Sandwell,E08000028,Sandwell
+West Midlands,00CT,Solihull,00CT,Solihull,E08000029,Solihull
+West Midlands,00CU,Walsall,00CU,Walsall,E08000030,Walsall
+West Midlands,00CW,Wolverhampton,00CW,Wolverhampton,E08000031,Wolverhampton
+Yorkshire and The Humber,00CX,Bradford,00CX,Bradford,E08000032,Bradford
+Yorkshire and The Humber,00CY,Calderdale,00CY,Calderdale,E08000033,Calderdale
+Yorkshire and The Humber,00CZ,Kirklees,00CZ,Kirklees,E08000034,Kirklees
+Yorkshire and The Humber,00DA,Leeds,00DA,Leeds,E08000035,Leeds
+Yorkshire and The Humber,00DB,Wakefield,00DB,Wakefield,E08000036,Wakefield
+North East,00EB,Hartlepool,00EB,Hartlepool,E06000001,Hartlepool
+North East,00EC,Middlesbrough,00EC,Middlesbrough,E06000002,Middlesbrough
+North East,00EE,Redcar and Cleveland,00EE,Redcar and Cleveland,E06000003,Redcar and Cleveland
+North East,00EF,Stockton-on-Tees,00EF,Stockton-on-Tees,E06000004,Stockton-on-Tees
+North East,00EH,Darlington,00EH,Darlington,E06000005,Darlington
+North West,00ET,Halton,00ET,Halton,E06000006,Halton
+North West,00EU,Warrington,00EU,Warrington,E06000007,Warrington
+North West,00EX,Blackburn with Darwen,00EX,Blackburn with Darwen,E06000008,Blackburn with Darwen
+North West,00EY,Blackpool,00EY,Blackpool,E06000009,Blackpool
+Yorkshire and The Humber,00FA,"Kingston upon Hull, City of",00FA,"Kingston upon Hull, City of",E06000010,"Kingston upon Hull, City of"
+Yorkshire and The Humber,00FB,East Riding of Yorkshire,00FB,East Riding of Yorkshire,E06000011,East Riding of Yorkshire
+Yorkshire and The Humber,00FC,North East Lincolnshire,00FC,North East Lincolnshire,E06000012,North East Lincolnshire
+Yorkshire and The Humber,00FD,North Lincolnshire,00FD,North Lincolnshire,E06000013,North Lincolnshire
+Yorkshire and The Humber,00FF,York,00FF,York,E06000014,York
+East Midlands,00FK,Derby,00FK,Derby,E06000015,Derby
+East Midlands,00FN,Leicester,00FN,Leicester,E06000016,Leicester
+East Midlands,00FP,Rutland,00FP,Rutland,E06000017,Rutland
+East Midlands,00FY,Nottingham,00FY,Nottingham,E06000018,Nottingham
+West Midlands,00GA,"Herefordshire, County of",00GA,"Herefordshire, County of",E06000019,"Herefordshire, County of"
+West Midlands,00GF,Telford and Wrekin,00GF,Telford and Wrekin,E06000020,Telford and Wrekin
+West Midlands,00GL,Stoke-on-Trent,00GL,Stoke-on-Trent,E06000021,Stoke-on-Trent
+South West,00HA,Bath and North East Somerset,00HA,Bath and North East Somerset,E06000022,Bath and North East Somerset
+South West,00HB,"Bristol, City of",00HB,"Bristol, City of",E06000023,"Bristol, City of"
+South West,00HC,North Somerset,00HC,North Somerset,E06000024,North Somerset
+South West,00HD,South Gloucestershire,00HD,South Gloucestershire,E06000025,South Gloucestershire
+South West,00HG,Plymouth,00HG,Plymouth,E06000026,Plymouth
+South West,00HH,Torbay,00HH,Torbay,E06000027,Torbay
+South West,00HN,Bournemouth,00HN,Bournemouth,E06000028,Bournemouth
+South West,00HP,Poole,00HP,Poole,E06000029,Poole
+South West,00HX,Swindon,00HX,Swindon,E06000030,Swindon
+East of England,00JA,Peterborough,00JA,Peterborough,E06000031,Peterborough
+East of England,00KA,Luton,00KA,Luton,E06000032,Luton
+East of England,00KF,Southend-on-Sea,00KF,Southend-on-Sea,E06000033,Southend-on-Sea
+East of England,00KG,Thurrock,00KG,Thurrock,E06000034,Thurrock
+South East,00LC,Medway,00LC,Medway,E06000035,Medway
+South East,00MA,Bracknell Forest,00MA,Bracknell Forest,E06000036,Bracknell Forest
+South East,00MB,West Berkshire,00MB,West Berkshire,E06000037,West Berkshire
+South East,00MC,Reading,00MC,Reading,E06000038,Reading
+South East,00MD,Slough,00MD,Slough,E06000039,Slough
+South East,00ME,Windsor and Maidenhead,00ME,Windsor and Maidenhead,E06000040,Windsor and Maidenhead
+South East,00MF,Wokingham,00MF,Wokingham,E06000041,Wokingham
+South East,00MG,Milton Keynes,00MG,Milton Keynes,E06000042,Milton Keynes
+South East,00ML,Brighton and Hove,00ML,Brighton and Hove,E06000043,Brighton and Hove
+South East,00MR,Portsmouth,00MR,Portsmouth,E06000044,Portsmouth
+South East,00MS,Southampton,00MS,Southampton,E06000045,Southampton
+South East,00MW,Isle of Wight,00MW,Isle of Wight,E06000046,Isle of Wight
+East of England,09UC,Mid Bedfordshire,00KC,Central Bedfordshire,E06000056,Central Bedfordshire
+East of England,09UD,Bedford,00KB,Bedford,E06000055,Bedford
+East of England,09UE,South Bedfordshire,00KC,Central Bedfordshire,E06000056,Central Bedfordshire
+South East,11UB,Aylesbury Vale,11UB,Aylesbury Vale,E07000004,Aylesbury Vale
+South East,11UC,Chiltern,11UC,Chiltern,E07000005,Chiltern
+South East,11UE,South Bucks,11UE,South Bucks,E07000006,South Bucks
+South East,11UF,Wycombe,11UF,Wycombe,E07000007,Wycombe
+East of England,12UB,Cambridge,12UB,Cambridge,E07000008,Cambridge
+East of England,12UC,East Cambridgeshire,12UC,East Cambridgeshire,E07000009,East Cambridgeshire
+East of England,12UD,Fenland,12UD,Fenland,E07000010,Fenland
+East of England,12UE,Huntingdonshire,12UE,Huntingdonshire,E07000011,Huntingdonshire
+East of England,12UG,South Cambridgeshire,12UG,South Cambridgeshire,E07000012,South Cambridgeshire
+North West,13UB,Chester,00EW,Cheshire West and Chester,E06000050,Cheshire West and Chester
+North West,13UC,Congleton,00EQ,Cheshire East,E06000049,Cheshire East
+North West,13UD,Crewe and Nantwich,00EQ,Cheshire East,E06000049,Cheshire East
+North West,13UE,Ellesmere Port & Neston,00EW,Cheshire West and Chester,E06000050,Cheshire West and Chester
+North West,13UG,Macclesfield,00EQ,Cheshire East,E06000049,Cheshire East
+North West,13UH,Vale Royal,00EW,Cheshire West and Chester,E06000050,Cheshire West and Chester
+South West,15UB,Caradon,00HE,Cornwall,E06000052,Cornwall
+South West,15UC,Carrick,00HE,Cornwall,E06000052,Cornwall
+South West,15UD,Kerrier,00HE,Cornwall,E06000052,Cornwall
+South West,15UE,North Cornwall,00HE,Cornwall,E06000052,Cornwall
+South West,15UF,Penwith,00HE,Cornwall,E06000052,Cornwall
+South West,15UG,Restormel,00HE,Cornwall,E06000052,Cornwall
+South West,15UH,Isles of Scilly,00HF,Isles of Scilly,E06000053,Isles of Scilly
+North West,16UB,Allerdale,16UB,Allerdale,E07000026,Allerdale
+North West,16UC,Barrow-in-Furness,16UC,Barrow-in-Furness,E07000027,Barrow-in-Furness
+North West,16UD,Carlisle,16UD,Carlisle,E07000028,Carlisle
+North West,16UE,Copeland,16UE,Copeland,E07000029,Copeland
+North West,16UF,Eden,16UF,Eden,E07000030,Eden
+North West,16UG,South Lakeland,16UG,South Lakeland,E07000031,South Lakeland
+East Midlands,17UB,Amber Valley,17UB,Amber Valley,E07000032,Amber Valley
+East Midlands,17UC,Bolsover,17UC,Bolsover,E07000033,Bolsover
+East Midlands,17UD,Chesterfield,17UD,Chesterfield,E07000034,Chesterfield
+East Midlands,17UF,Derbyshire Dales,17UF,Derbyshire Dales,E07000035,Derbyshire Dales
+East Midlands,17UG,Erewash,17UG,Erewash,E07000036,Erewash
+East Midlands,17UH,High Peak,17UH,High Peak,E07000037,High Peak
+East Midlands,17UJ,North East Derbyshire,17UJ,North East Derbyshire,E07000038,North East Derbyshire
+East Midlands,17UK,South Derbyshire,17UK,South Derbyshire,E07000039,South Derbyshire
+South West,18UB,East Devon,18UB,East Devon,E07000040,East Devon
+South West,18UC,Exeter,18UC,Exeter,E07000041,Exeter
+South West,18UD,Mid Devon,18UD,Mid Devon,E07000042,Mid Devon
+South West,18UE,North Devon,18UE,North Devon,E07000043,North Devon
+South West,18UG,South Hams,18UG,South Hams,E07000044,South Hams
+South West,18UH,Teignbridge,18UH,Teignbridge,E07000045,Teignbridge
+South West,18UK,Torridge,18UK,Torridge,E07000046,Torridge
+South West,18UL,West Devon,18UL,West Devon,E07000047,West Devon
+South West,19UC,Christchurch,19UC,Christchurch,E07000048,Christchurch
+South West,19UD,East Dorset,19UD,East Dorset,E07000049,East Dorset
+South West,19UE,North Dorset,19UE,North Dorset,E07000050,North Dorset
+South West,19UG,Purbeck,19UG,Purbeck,E07000051,Purbeck
+South West,19UH,West Dorset,19UH,West Dorset,E07000052,West Dorset
+South West,19UJ,Weymouth and Portland,19UJ,Weymouth and Portland,E07000053,Weymouth and Portland
+North East,20UB,Chester-le-Street,00EJ,County Durham,E06000047,County Durham
+North East,20UD,Derwentside,00EJ,County Durham,E06000047,County Durham
+North East,20UE,Durham,00EJ,County Durham,E06000047,County Durham
+North East,20UF,Easington,00EJ,County Durham,E06000047,County Durham
+North East,20UG,Sedgefield,00EJ,County Durham,E06000047,County Durham
+North East,20UH,Teesdale,00EJ,County Durham,E06000047,County Durham
+North East,20UJ,Wear Valley,00EJ,County Durham,E06000047,County Durham
+South East,21UC,Eastbourne,21UC,Eastbourne,E07000061,Eastbourne
+South East,21UD,Hastings,21UD,Hastings,E07000062,Hastings
+South East,21UF,Lewes,21UF,Lewes,E07000063,Lewes
+South East,21UG,Rother,21UG,Rother,E07000064,Rother
+South East,21UH,Wealden,21UH,Wealden,E07000065,Wealden
+East of England,22UB,Basildon,22UB,Basildon,E07000066,Basildon
+East of England,22UC,Braintree,22UC,Braintree,E07000067,Braintree
+East of England,22UD,Brentwood,22UD,Brentwood,E07000068,Brentwood
+East of England,22UE,Castle Point,22UE,Castle Point,E07000069,Castle Point
+East of England,22UF,Chelmsford,22UF,Chelmsford,E07000070,Chelmsford
+East of England,22UG,Colchester,22UG,Colchester,E07000071,Colchester
+East of England,22UH,Epping Forest,22UH,Epping Forest,E07000072,Epping Forest
+East of England,22UJ,Harlow,22UJ,Harlow,E07000073,Harlow
+East of England,22UK,Maldon,22UK,Maldon,E07000074,Maldon
+East of England,22UL,Rochford,22UL,Rochford,E07000075,Rochford
+East of England,22UN,Tendring,22UN,Tendring,E07000076,Tendring
+East of England,22UQ,Uttlesford,22UQ,Uttlesford,E07000077,Uttlesford
+South West,23UB,Cheltenham,23UB,Cheltenham,E07000078,Cheltenham
+South West,23UC,Cotswold,23UC,Cotswold,E07000079,Cotswold
+South West,23UD,Forest of Dean,23UD,Forest of Dean,E07000080,Forest of Dean
+South West,23UE,Gloucester,23UE,Gloucester,E07000081,Gloucester
+South West,23UF,Stroud,23UF,Stroud,E07000082,Stroud
+South West,23UG,Tewkesbury,23UG,Tewkesbury,E07000083,Tewkesbury
+South East,24UB,Basingstoke and Deane,24UB,Basingstoke and Deane,E07000084,Basingstoke and Deane
+South East,24UC,East Hampshire,24UC,East Hampshire,E07000085,East Hampshire
+South East,24UD,Eastleigh,24UD,Eastleigh,E07000086,Eastleigh
+South East,24UE,Fareham,24UE,Fareham,E07000087,Fareham
+South East,24UF,Gosport,24UF,Gosport,E07000088,Gosport
+South East,24UG,Hart,24UG,Hart,E07000089,Hart
+South East,24UH,Havant,24UH,Havant,E07000090,Havant
+South East,24UJ,New Forest,24UJ,New Forest,E07000091,New Forest
+South East,24UL,Rushmoor,24UL,Rushmoor,E07000092,Rushmoor
+South East,24UN,Test Valley,24UN,Test Valley,E07000093,Test Valley
+South East,24UP,Winchester,24UP,Winchester,E07000094,Winchester
+East of England,26UB,Broxbourne,26UB,Broxbourne,E07000095,Broxbourne
+East of England,26UC,Dacorum,26UC,Dacorum,E07000096,Dacorum
+East of England,26UD,East Hertfordshire,26UD,East Hertfordshire,E07000097,East Hertfordshire
+East of England,26UE,Hertsmere,26UE,Hertsmere,E07000098,Hertsmere
+East of England,26UF,North Hertfordshire,26UF,North Hertfordshire,E07000099,North Hertfordshire
+East of England,26UG,St Albans,26UG,St Albans,E07000100,St Albans
+East of England,26UH,Stevenage,26UH,Stevenage,E07000101,Stevenage
+East of England,26UJ,Three Rivers,26UJ,Three Rivers,E07000102,Three Rivers
+East of England,26UK,Watford,26UK,Watford,E07000103,Watford
+East of England,26UL,Welwyn Hatfield,26UL,Welwyn Hatfield,E07000104,Welwyn Hatfield
+South East,29UB,Ashford,29UB,Ashford,E07000105,Ashford
+South East,29UC,Canterbury,29UC,Canterbury,E07000106,Canterbury
+South East,29UD,Dartford,29UD,Dartford,E07000107,Dartford
+South East,29UE,Dover,29UE,Dover,E07000108,Dover
+South East,29UG,Gravesham,29UG,Gravesham,E07000109,Gravesham
+South East,29UH,Maidstone,29UH,Maidstone,E07000110,Maidstone
+South East,29UK,Sevenoaks,29UK,Sevenoaks,E07000111,Sevenoaks
+South East,29UL,Shepway,29UL,Shepway,E07000112,Shepway
+South East,29UM,Swale,29UM,Swale,E07000113,Swale
+South East,29UN,Thanet,29UN,Thanet,E07000114,Thanet
+South East,29UP,Tonbridge and Malling,29UP,Tonbridge and Malling,E07000115,Tonbridge and Malling
+South East,29UQ,Tunbridge Wells,29UQ,Tunbridge Wells,E07000116,Tunbridge Wells
+North West,30UD,Burnley,30UD,Burnley,E07000117,Burnley
+North West,30UE,Chorley,30UE,Chorley,E07000118,Chorley
+North West,30UF,Fylde,30UF,Fylde,E07000119,Fylde
+North West,30UG,Hyndburn,30UG,Hyndburn,E07000120,Hyndburn
+North West,30UH,Lancaster,30UH,Lancaster,E07000121,Lancaster
+North West,30UJ,Pendle,30UJ,Pendle,E07000122,Pendle
+North West,30UK,Preston,30UK,Preston,E07000123,Preston
+North West,30UL,Ribble Valley,30UL,Ribble Valley,E07000124,Ribble Valley
+North West,30UM,Rossendale,30UM,Rossendale,E07000125,Rossendale
+North West,30UN,South Ribble,30UN,South Ribble,E07000126,South Ribble
+North West,30UP,West Lancashire,30UP,West Lancashire,E07000127,West Lancashire
+North West,30UQ,Wyre,30UQ,Wyre,E07000128,Wyre
+East Midlands,31UB,Blaby,31UB,Blaby,E07000129,Blaby
+East Midlands,31UC,Charnwood,31UC,Charnwood,E07000130,Charnwood
+East Midlands,31UD,Harborough,31UD,Harborough,E07000131,Harborough
+East Midlands,31UE,Hinckley and Bosworth,31UE,Hinckley and Bosworth,E07000132,Hinckley and Bosworth
+East Midlands,31UG,Melton,31UG,Melton,E07000133,Melton
+East Midlands,31UH,North West Leicestershire,31UH,North West Leicestershire,E07000134,North West Leicestershire
+East Midlands,31UJ,Oadby and Wigston,31UJ,Oadby and Wigston,E07000135,Oadby and Wigston
+East Midlands,32UB,Boston,32UB,Boston,E07000136,Boston
+East Midlands,32UC,East Lindsey,32UC,East Lindsey,E07000137,East Lindsey
+East Midlands,32UD,Lincoln,32UD,Lincoln,E07000138,Lincoln
+East Midlands,32UE,North Kesteven,32UE,North Kesteven,E07000139,North Kesteven
+East Midlands,32UF,South Holland,32UF,South Holland,E07000140,South Holland
+East Midlands,32UG,South Kesteven,32UG,South Kesteven,E07000141,South Kesteven
+East Midlands,32UH,West Lindsey,32UH,West Lindsey,E07000142,West Lindsey
+East of England,33UB,Breckland,33UB,Breckland,E07000143,Breckland
+East of England,33UC,Broadland,33UC,Broadland,E07000144,Broadland
+East of England,33UD,Great Yarmouth,33UD,Great Yarmouth,E07000145,Great Yarmouth
+East of England,33UE,King's Lynn and West Norfolk,33UE,King's Lynn and West Norfolk,E07000146,King's Lynn and West Norfolk
+East of England,33UF,North Norfolk,33UF,North Norfolk,E07000147,North Norfolk
+East of England,33UG,Norwich,33UG,Norwich,E07000148,Norwich
+East of England,33UH,South Norfolk,33UH,South Norfolk,E07000149,South Norfolk
+East Midlands,34UB,Corby,34UB,Corby,E07000150,Corby
+East Midlands,34UC,Daventry,34UC,Daventry,E07000151,Daventry
+East Midlands,34UD,East Northamptonshire,34UD,East Northamptonshire,E07000152,East Northamptonshire
+East Midlands,34UE,Kettering,34UE,Kettering,E07000153,Kettering
+East Midlands,34UF,Northampton,34UF,Northampton,E07000154,Northampton
+East Midlands,34UG,South Northamptonshire,34UG,South Northamptonshire,E07000155,South Northamptonshire
+East Midlands,34UH,Wellingborough,34UH,Wellingborough,E07000156,Wellingborough
+North East,35UB,Alnwick,00EM,Northumberland,E06000048,Northumberland
+North East,35UC,Berwick-upon-Tweed,00EM,Northumberland,E06000048,Northumberland
+North East,35UD,Blyth Valley,00EM,Northumberland,E06000048,Northumberland
+North East,35UE,Castle Morpeth,00EM,Northumberland,E06000048,Northumberland
+North East,35UF,Tynedale,00EM,Northumberland,E06000048,Northumberland
+North East,35UG,Wansbeck,00EM,Northumberland,E06000048,Northumberland
+Yorkshire and The Humber,36UB,Craven,36UB,Craven,E07000163,Craven
+Yorkshire and The Humber,36UC,Hambleton,36UC,Hambleton,E07000164,Hambleton
+Yorkshire and The Humber,36UD,Harrogate,36UD,Harrogate,E07000165,Harrogate
+Yorkshire and The Humber,36UE,Richmondshire,36UE,Richmondshire,E07000166,Richmondshire
+Yorkshire and The Humber,36UF,Ryedale,36UF,Ryedale,E07000167,Ryedale
+Yorkshire and The Humber,36UG,Scarborough,36UG,Scarborough,E07000168,Scarborough
+Yorkshire and The Humber,36UH,Selby,36UH,Selby,E07000169,Selby
+East Midlands,37UB,Ashfield,37UB,Ashfield,E07000170,Ashfield
+East Midlands,37UC,Bassetlaw,37UC,Bassetlaw,E07000171,Bassetlaw
+East Midlands,37UD,Broxtowe,37UD,Broxtowe,E07000172,Broxtowe
+East Midlands,37UE,Gedling,37UE,Gedling,E07000173,Gedling
+East Midlands,37UF,Mansfield,37UF,Mansfield,E07000174,Mansfield
+East Midlands,37UG,Newark and Sherwood,37UG,Newark and Sherwood,E07000175,Newark and Sherwood
+East Midlands,37UJ,Rushcliffe,37UJ,Rushcliffe,E07000176,Rushcliffe
+South East,38UB,Cherwell,38UB,Cherwell,E07000177,Cherwell
+South East,38UC,Oxford,38UC,Oxford,E07000178,Oxford
+South East,38UD,South Oxfordshire,38UD,South Oxfordshire,E07000179,South Oxfordshire
+South East,38UE,Vale of White Horse,38UE,Vale of White Horse,E07000180,Vale of White Horse
+South East,38UF,West Oxfordshire,38UF,West Oxfordshire,E07000181,West Oxfordshire
+West Midlands,39UB,Bridgnorth,00GG,Shropshire,E06000051,Shropshire
+West Midlands,39UC,North Shropshire,00GG,Shropshire,E06000051,Shropshire
+West Midlands,39UD,Oswestry,00GG,Shropshire,E06000051,Shropshire
+West Midlands,39UE,Shrewsbury and Atcham,00GG,Shropshire,E06000051,Shropshire
+West Midlands,39UF,South Shropshire,00GG,Shropshire,E06000051,Shropshire
+South West,40UB,Mendip,40UB,Mendip,E07000187,Mendip
+South West,40UC,Sedgemoor,40UC,Sedgemoor,E07000188,Sedgemoor
+South West,40UD,South Somerset,40UD,South Somerset,E07000189,South Somerset
+South West,40UE,Taunton Deane,40UE,Taunton Deane,E07000190,Taunton Deane
+South West,40UF,West Somerset,40UF,West Somerset,E07000191,West Somerset
+West Midlands,41UB,Cannock Chase,41UB,Cannock Chase,E07000192,Cannock Chase
+West Midlands,41UC,East Staffordshire,41UC,East Staffordshire,E07000193,East Staffordshire
+West Midlands,41UD,Lichfield,41UD,Lichfield,E07000194,Lichfield
+West Midlands,41UE,Newcastle-under-Lyme,41UE,Newcastle-under-Lyme,E07000195,Newcastle-under-Lyme
+West Midlands,41UF,South Staffordshire,41UF,South Staffordshire,E07000196,South Staffordshire
+West Midlands,41UG,Stafford,41UG,Stafford,E07000197,Stafford
+West Midlands,41UH,Staffordshire Moorlands,41UH,Staffordshire Moorlands,E07000198,Staffordshire Moorlands
+West Midlands,41UK,Tamworth,41UK,Tamworth,E07000199,Tamworth
+East of England,42UB,Babergh,42UB,Babergh,E07000200,Babergh
+East of England,42UC,Forest Heath,42UC,Forest Heath,E07000201,Forest Heath
+East of England,42UD,Ipswich,42UD,Ipswich,E07000202,Ipswich
+East of England,42UE,Mid Suffolk,42UE,Mid Suffolk,E07000203,Mid Suffolk
+East of England,42UF,St Edmundsbury,42UF,St Edmundsbury,E07000204,St Edmundsbury
+East of England,42UG,Suffolk Coastal,42UG,Suffolk Coastal,E07000205,Suffolk Coastal
+East of England,42UH,Waveney,42UH,Waveney,E07000206,Waveney
+South East,43UB,Elmbridge,43UB,Elmbridge,E07000207,Elmbridge
+South East,43UC,Epsom and Ewell,43UC,Epsom and Ewell,E07000208,Epsom and Ewell
+South East,43UD,Guildford,43UD,Guildford,E07000209,Guildford
+South East,43UE,Mole Valley,43UE,Mole Valley,E07000210,Mole Valley
+South East,43UF,Reigate and Banstead,43UF,Reigate and Banstead,E07000211,Reigate and Banstead
+South East,43UG,Runnymede,43UG,Runnymede,E07000212,Runnymede
+South East,43UH,Spelthorne,43UH,Spelthorne,E07000213,Spelthorne
+South East,43UJ,Surrey Heath,43UJ,Surrey Heath,E07000214,Surrey Heath
+South East,43UK,Tandridge,43UK,Tandridge,E07000215,Tandridge
+South East,43UL,Waverley,43UL,Waverley,E07000216,Waverley
+South East,43UM,Woking,43UM,Woking,E07000217,Woking
+West Midlands,44UB,North Warwickshire,44UB,North Warwickshire,E07000218,North Warwickshire
+West Midlands,44UC,Nuneaton and Bedworth,44UC,Nuneaton and Bedworth,E07000219,Nuneaton and Bedworth
+West Midlands,44UD,Rugby,44UD,Rugby,E07000220,Rugby
+West Midlands,44UE,Stratford-on-Avon,44UE,Stratford-on-Avon,E07000221,Stratford-on-Avon
+West Midlands,44UF,Warwick,44UF,Warwick,E07000222,Warwick
+South East,45UB,Adur,45UB,Adur,E07000223,Adur
+South East,45UC,Arun,45UC,Arun,E07000224,Arun
+South East,45UD,Chichester,45UD,Chichester,E07000225,Chichester
+South East,45UE,Crawley,45UE,Crawley,E07000226,Crawley
+South East,45UF,Horsham,45UF,Horsham,E07000227,Horsham
+South East,45UG,Mid Sussex,45UG,Mid Sussex,E07000228,Mid Sussex
+South East,45UH,Worthing,45UH,Worthing,E07000229,Worthing
+South West,46UB,Kennet,00HY,Wiltshire,E06000054,Wiltshire
+South West,46UC,North Wiltshire,00HY,Wiltshire,E06000054,Wiltshire
+South West,46UD,Salisbury,00HY,Wiltshire,E06000054,Wiltshire
+South West,46UF,West Wiltshire,00HY,Wiltshire,E06000054,Wiltshire
+West Midlands,47UB,Bromsgrove,47UB,Bromsgrove,E07000234,Bromsgrove
+West Midlands,47UC,Malvern Hills,47UC,Malvern Hills,E07000235,Malvern Hills
+West Midlands,47UD,Redditch,47UD,Redditch,E07000236,Redditch
+West Midlands,47UE,Worcester,47UE,Worcester,E07000237,Worcester
+West Midlands,47UF,Wychavon,47UF,Wychavon,E07000238,Wychavon
+West Midlands,47UG,Wyre Forest,47UG,Wyre Forest,E07000239,Wyre Forest
+,00NA,Isle of Anglesey,00NA,Isle of Anglesey,W06000001,Isle of Anglesey
+,00NC,Gwynedd,00NC,Gwynedd,W06000002,Gwynedd
+,00NE,Conwy,00NE,Conwy,W06000003,Conwy
+,00NG,Denbighshire,00NG,Denbighshire,W06000004,Denbighshire
+,00NJ,Flintshire,00NJ,Flintshire,W06000005,Flintshire
+,00NL,Wrexham,00NL,Wrexham,W06000006,Wrexham
+,00NN,Powys,00NN,Powys,W06000023,Powys
+,00NQ,Ceredigion,00NQ,Ceredigion,W06000008,Ceredigion
+,00NS,Pembrokeshire,00NS,Pembrokeshire,W06000009,Pembrokeshire
+,00NU,Carmarthenshire,00NU,Carmarthenshire,W06000010,Carmarthenshire
+,00NX,Swansea,00NX,Swansea,W06000011,Swansea
+,00NZ,Neath Port Talbot,00NZ,Neath Port Talbot,W06000012,Neath Port Talbot
+,00PB,Bridgend,00PB,Bridgend,W06000013,Bridgend
+,00PD,The Vale of Glamorgan,00PD,The Vale of Glamorgan,W06000014,The Vale of Glamorgan
+,00PF,"Rhondda, Cynon, Taff",00PF,"Rhondda, Cynon, Taff",W06000016,Rhondda Cynon Taf
+,00PH,Merthyr Tydfil,00PH,Merthyr Tydfil,W06000024,Merthyr Tydfil
+,00PK,Caerphilly,00PK,Caerphilly,W06000018,Caerphilly
+,00PL,Blaenau Gwent,00PL,Blaenau Gwent,W06000019,Blaenau Gwent
+,00PM,Torfaen,00PM,Torfaen,W06000020,Torfaen
+,00PP,Monmouthshire,00PP,Monmouthshire,W06000021,Monmouthshire
+,00PR,Newport,00PR,Newport,W06000022,Newport
+,00PT,Cardiff,00PT,Cardiff,W06000015,Cardiff
