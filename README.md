@@ -1,4 +1,4 @@
-# irid_trends
+# Trends in hospital admissions due to injecting-related infections in England
 
 Population estimates from Nomis[nomisweb.co.uk] "Population estimates - local authority based by single year of age"
 
