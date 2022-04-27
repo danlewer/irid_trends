@@ -2,7 +2,7 @@
 
 ## Population estimates
 
-From [nomisweb.co.uk](Nomis) "Population estimates - local authority based by single year of age"
+From [Nomis](nomisweb.co.uk) "Population estimates - local authority based by single year of age"
 
 ## Local authority code lookup 
 
