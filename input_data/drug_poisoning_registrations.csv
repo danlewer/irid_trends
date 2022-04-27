@@ -1,0 +1,729 @@
+Year of death registration,Usual residence code,Usual residence name,Substance,Deaths
+2020,E12000001,North East,01 All drug poisonings,389
+2020,E12000002,North West,01 All drug poisonings,771
+2020,E12000003,Yorkshire and The Humber,01 All drug poisonings,550
+2020,E12000004,East Midlands,01 All drug poisonings,321
+2020,E12000005,West Midlands,01 All drug poisonings,433
+2020,E12000006,East of England,01 All drug poisonings,386
+2020,E12000007,London,01 All drug poisonings,432
+2020,E12000008,South East,01 All drug poisonings,575
+2020,E12000009,South West,01 All drug poisonings,455
+2020,E92000001,England,01 All drug poisonings,4312
+2020,J99000001,Non-residents,01 All drug poisonings,25
+2020,K04000001,England and Wales,01 All drug poisonings,4561
+2020,W92000004,Wales,01 All drug poisonings,224
+2020,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",191
+2020,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",378
+2020,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",272
+2020,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",155
+2020,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",248
+2020,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",170
+2020,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",210
+2020,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",264
+2020,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",250
+2020,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2138
+2020,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",12
+2020,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2263
+2020,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",113
+2019,E12000001,North East,01 All drug poisonings,332
+2019,E12000002,North West,01 All drug poisonings,736
+2019,E12000003,Yorkshire and The Humber,01 All drug poisonings,527
+2019,E12000004,East Midlands,01 All drug poisonings,294
+2019,E12000005,West Midlands,01 All drug poisonings,377
+2019,E12000006,East of England,01 All drug poisonings,365
+2019,E12000007,London,01 All drug poisonings,493
+2019,E12000008,South East,01 All drug poisonings,550
+2019,E12000009,South West,01 All drug poisonings,441
+2019,E92000001,England,01 All drug poisonings,4115
+2019,J99000001,Non-residents,01 All drug poisonings,38
+2019,K04000001,England and Wales,01 All drug poisonings,4393
+2019,W92000004,Wales,01 All drug poisonings,240
+2019,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",172
+2019,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",370
+2019,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",272
+2019,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",114
+2019,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",213
+2019,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",151
+2019,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",237
+2019,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",267
+2019,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",221
+2019,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2017
+2019,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",22
+2019,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2160
+2019,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",121
+2018,E12000001,North East,01 All drug poisonings,354
+2018,E12000002,North West,01 All drug poisonings,647
+2018,E12000003,Yorkshire and The Humber,01 All drug poisonings,484
+2018,E12000004,East Midlands,01 All drug poisonings,296
+2018,E12000005,West Midlands,01 All drug poisonings,383
+2018,E12000006,East of England,01 All drug poisonings,398
+2018,E12000007,London,01 All drug poisonings,493
+2018,E12000008,South East,01 All drug poisonings,532
+2018,E12000009,South West,01 All drug poisonings,396
+2018,E92000001,England,01 All drug poisonings,3983
+2018,J99000001,Non-residents,01 All drug poisonings,49
+2018,K04000001,England and Wales,01 All drug poisonings,4359
+2018,W92000004,Wales,01 All drug poisonings,327
+2018,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",187
+2018,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",359
+2018,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",256
+2018,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",127
+2018,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",217
+2018,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",187
+2018,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",218
+2018,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",265
+2018,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",201
+2018,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2017
+2018,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",27
+2018,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2208
+2018,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",164
+2017,E12000001,North East,01 All drug poisonings,289
+2017,E12000002,North West,01 All drug poisonings,654
+2017,E12000003,Yorkshire and The Humber,01 All drug poisonings,409
+2017,E12000004,East Midlands,01 All drug poisonings,277
+2017,E12000005,West Midlands,01 All drug poisonings,327
+2017,E12000006,East of England,01 All drug poisonings,318
+2017,E12000007,London,01 All drug poisonings,334
+2017,E12000008,South East,01 All drug poisonings,516
+2017,E12000009,South West,01 All drug poisonings,358
+2017,E92000001,England,01 All drug poisonings,3482
+2017,J99000001,Non-residents,01 All drug poisonings,14
+2017,K04000001,England and Wales,01 All drug poisonings,3756
+2017,W92000004,Wales,01 All drug poisonings,260
+2017,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",164
+2017,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",348
+2017,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",227
+2017,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",122
+2017,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",186
+2017,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",167
+2017,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",159
+2017,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",269
+2017,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",187
+2017,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1829
+2017,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",3
+2017,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1985
+2017,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",153
+2016,E12000001,North East,01 All drug poisonings,260
+2016,E12000002,North West,01 All drug poisonings,587
+2016,E12000003,Yorkshire and The Humber,01 All drug poisonings,379
+2016,E12000004,East Midlands,01 All drug poisonings,225
+2016,E12000005,West Midlands,01 All drug poisonings,317
+2016,E12000006,East of England,01 All drug poisonings,343
+2016,E12000007,London,01 All drug poisonings,412
+2016,E12000008,South East,01 All drug poisonings,524
+2016,E12000009,South West,01 All drug poisonings,403
+2016,E92000001,England,01 All drug poisonings,3450
+2016,J99000001,Non-residents,01 All drug poisonings,23
+2016,K04000001,England and Wales,01 All drug poisonings,3744
+2016,W92000004,Wales,01 All drug poisonings,271
+2016,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",160
+2016,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",346
+2016,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",213
+2016,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",90
+2016,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",192
+2016,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",179
+2016,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",204
+2016,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",278
+2016,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",206
+2016,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1868
+2016,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",13
+2016,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",2039
+2016,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",158
+2015,E12000001,North East,01 All drug poisonings,245
+2015,E12000002,North West,01 All drug poisonings,594
+2015,E12000003,Yorkshire and The Humber,01 All drug poisonings,414
+2015,E12000004,East Midlands,01 All drug poisonings,224
+2015,E12000005,West Midlands,01 All drug poisonings,317
+2015,E12000006,East of England,01 All drug poisonings,297
+2015,E12000007,London,01 All drug poisonings,472
+2015,E12000008,South East,01 All drug poisonings,502
+2015,E12000009,South West,01 All drug poisonings,351
+2015,E92000001,England,01 All drug poisonings,3416
+2015,J99000001,Non-residents,01 All drug poisonings,20
+2015,K04000001,England and Wales,01 All drug poisonings,3674
+2015,W92000004,Wales,01 All drug poisonings,238
+2015,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",121
+2015,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",343
+2015,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",244
+2015,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",102
+2015,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",186
+2015,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",171
+2015,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",209
+2015,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",275
+2015,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",190
+2015,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1841
+2015,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",7
+2015,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1989
+2015,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",141
+2014,E12000001,North East,01 All drug poisonings,249
+2014,E12000002,North West,01 All drug poisonings,577
+2014,E12000003,Yorkshire and The Humber,01 All drug poisonings,279
+2014,E12000004,East Midlands,01 All drug poisonings,227
+2014,E12000005,West Midlands,01 All drug poisonings,347
+2014,E12000006,East of England,01 All drug poisonings,329
+2014,E12000007,London,01 All drug poisonings,340
+2014,E12000008,South East,01 All drug poisonings,506
+2014,E12000009,South West,01 All drug poisonings,302
+2014,E92000001,England,01 All drug poisonings,3156
+2014,J99000001,Non-residents,01 All drug poisonings,22
+2014,K04000001,England and Wales,01 All drug poisonings,3346
+2014,W92000004,Wales,01 All drug poisonings,168
+2014,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",142
+2014,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",343
+2014,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",156
+2014,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",96
+2014,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",210
+2014,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",168
+2014,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",155
+2014,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",272
+2014,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",146
+2014,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1688
+2014,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",8
+2014,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1786
+2014,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",90
+2013,E12000001,North East,01 All drug poisonings,196
+2013,E12000002,North West,01 All drug poisonings,487
+2013,E12000003,Yorkshire and The Humber,01 All drug poisonings,320
+2013,E12000004,East Midlands,01 All drug poisonings,211
+2013,E12000005,West Midlands,01 All drug poisonings,252
+2013,E12000006,East of England,01 All drug poisonings,259
+2013,E12000007,London,01 All drug poisonings,320
+2013,E12000008,South East,01 All drug poisonings,416
+2013,E12000009,South West,01 All drug poisonings,273
+2013,E92000001,England,01 All drug poisonings,2734
+2013,J99000001,Non-residents,01 All drug poisonings,13
+2013,K04000001,England and Wales,01 All drug poisonings,2955
+2013,W92000004,Wales,01 All drug poisonings,208
+2013,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",105
+2013,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",261
+2013,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",167
+2013,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",115
+2013,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",169
+2013,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",134
+2013,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",139
+2013,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",224
+2013,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",155
+2013,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1469
+2013,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",4
+2013,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1592
+2013,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",119
+2012,E12000001,North East,01 All drug poisonings,151
+2012,E12000002,North West,01 All drug poisonings,466
+2012,E12000003,Yorkshire and The Humber,01 All drug poisonings,258
+2012,E12000004,East Midlands,01 All drug poisonings,194
+2012,E12000005,West Midlands,01 All drug poisonings,202
+2012,E12000006,East of England,01 All drug poisonings,229
+2012,E12000007,London,01 All drug poisonings,283
+2012,E12000008,South East,01 All drug poisonings,332
+2012,E12000009,South West,01 All drug poisonings,252
+2012,E92000001,England,01 All drug poisonings,2367
+2012,J99000001,Non-residents,01 All drug poisonings,16
+2012,K04000001,England and Wales,01 All drug poisonings,2597
+2012,W92000004,Wales,01 All drug poisonings,214
+2012,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",82
+2012,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",244
+2012,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",145
+2012,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",75
+2012,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",116
+2012,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",110
+2012,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",104
+2012,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",160
+2012,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",131
+2012,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1167
+2012,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",8
+2012,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1290
+2012,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",115
+2011,E12000001,North East,01 All drug poisonings,163
+2011,E12000002,North West,01 All drug poisonings,471
+2011,E12000003,Yorkshire and The Humber,01 All drug poisonings,233
+2011,E12000004,East Midlands,01 All drug poisonings,174
+2011,E12000005,West Midlands,01 All drug poisonings,226
+2011,E12000006,East of England,01 All drug poisonings,268
+2011,E12000007,London,01 All drug poisonings,310
+2011,E12000008,South East,01 All drug poisonings,339
+2011,E12000009,South West,01 All drug poisonings,241
+2011,E92000001,England,01 All drug poisonings,2425
+2011,J99000001,Non-residents,01 All drug poisonings,12
+2011,K04000001,England and Wales,01 All drug poisonings,2652
+2011,W92000004,Wales,01 All drug poisonings,215
+2011,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",103
+2011,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",279
+2011,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",137
+2011,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",85
+2011,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",111
+2011,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",135
+2011,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",131
+2011,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",182
+2011,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",143
+2011,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1306
+2011,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",6
+2011,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1439
+2011,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",127
+2010,E12000001,North East,01 All drug poisonings,171
+2010,E12000002,North West,01 All drug poisonings,436
+2010,E12000003,Yorkshire and The Humber,01 All drug poisonings,244
+2010,E12000004,East Midlands,01 All drug poisonings,181
+2010,E12000005,West Midlands,01 All drug poisonings,248
+2010,E12000006,East of England,01 All drug poisonings,227
+2010,E12000007,London,01 All drug poisonings,356
+2010,E12000008,South East,01 All drug poisonings,362
+2010,E12000009,South West,01 All drug poisonings,284
+2010,E92000001,England,01 All drug poisonings,2509
+2010,J99000001,Non-residents,01 All drug poisonings,14
+2010,K04000001,England and Wales,01 All drug poisonings,2747
+2010,W92000004,Wales,01 All drug poisonings,224
+2010,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",105
+2010,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",245
+2010,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",156
+2010,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",90
+2010,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",139
+2010,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",121
+2010,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",170
+2010,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",200
+2010,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",158
+2010,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1384
+2010,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",5
+2010,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1527
+2010,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",138
+2009,E12000001,North East,01 All drug poisonings,185
+2009,E12000002,North West,01 All drug poisonings,500
+2009,E12000003,Yorkshire and The Humber,01 All drug poisonings,270
+2009,E12000004,East Midlands,01 All drug poisonings,218
+2009,E12000005,West Midlands,01 All drug poisonings,218
+2009,E12000006,East of England,01 All drug poisonings,240
+2009,E12000007,London,01 All drug poisonings,344
+2009,E12000008,South East,01 All drug poisonings,407
+2009,E12000009,South West,01 All drug poisonings,293
+2009,E92000001,England,01 All drug poisonings,2675
+2009,J99000001,Non-residents,01 All drug poisonings,19
+2009,K04000001,England and Wales,01 All drug poisonings,2878
+2009,W92000004,Wales,01 All drug poisonings,184
+2009,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",119
+2009,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",280
+2009,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",147
+2009,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",117
+2009,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",113
+2009,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",124
+2009,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",154
+2009,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",238
+2009,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",181
+2009,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1473
+2009,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",11
+2009,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1600
+2009,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",116
+2008,E12000001,North East,01 All drug poisonings,164
+2008,E12000002,North West,01 All drug poisonings,509
+2008,E12000003,Yorkshire and The Humber,01 All drug poisonings,271
+2008,E12000004,East Midlands,01 All drug poisonings,206
+2008,E12000005,West Midlands,01 All drug poisonings,254
+2008,E12000006,East of England,01 All drug poisonings,287
+2008,E12000007,London,01 All drug poisonings,374
+2008,E12000008,South East,01 All drug poisonings,364
+2008,E12000009,South West,01 All drug poisonings,305
+2008,E92000001,England,01 All drug poisonings,2734
+2008,J99000001,Non-residents,01 All drug poisonings,33
+2008,K04000001,England and Wales,01 All drug poisonings,2928
+2008,W92000004,Wales,01 All drug poisonings,161
+2008,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",98
+2008,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",283
+2008,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",157
+2008,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",99
+2008,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",142
+2008,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",151
+2008,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",151
+2008,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",201
+2008,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",182
+2008,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1464
+2008,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",22
+2008,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1575
+2008,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",89
+2007,E12000001,North East,01 All drug poisonings,135
+2007,E12000002,North West,01 All drug poisonings,389
+2007,E12000003,Yorkshire and The Humber,01 All drug poisonings,249
+2007,E12000004,East Midlands,01 All drug poisonings,209
+2007,E12000005,West Midlands,01 All drug poisonings,232
+2007,E12000006,East of England,01 All drug poisonings,221
+2007,E12000007,London,01 All drug poisonings,341
+2007,E12000008,South East,01 All drug poisonings,389
+2007,E12000009,South West,01 All drug poisonings,268
+2007,E92000001,England,01 All drug poisonings,2433
+2007,J99000001,Non-residents,01 All drug poisonings,18
+2007,K04000001,England and Wales,01 All drug poisonings,2640
+2007,W92000004,Wales,01 All drug poisonings,189
+2007,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",73
+2007,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",207
+2007,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",149
+2007,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",101
+2007,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",137
+2007,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",111
+2007,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",153
+2007,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",209
+2007,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",159
+2007,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1299
+2007,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",8
+2007,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1403
+2007,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",96
+2006,E12000001,North East,01 All drug poisonings,167
+2006,E12000002,North West,01 All drug poisonings,422
+2006,E12000003,Yorkshire and The Humber,01 All drug poisonings,273
+2006,E12000004,East Midlands,01 All drug poisonings,180
+2006,E12000005,West Midlands,01 All drug poisonings,213
+2006,E12000006,East of England,01 All drug poisonings,187
+2006,E12000007,London,01 All drug poisonings,366
+2006,E12000008,South East,01 All drug poisonings,352
+2006,E12000009,South West,01 All drug poisonings,236
+2006,E92000001,England,01 All drug poisonings,2396
+2006,J99000001,Non-residents,01 All drug poisonings,17
+2006,K04000001,England and Wales,01 All drug poisonings,2570
+2006,W92000004,Wales,01 All drug poisonings,157
+2006,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",78
+2006,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",204
+2006,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",138
+2006,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",85
+2006,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",112
+2006,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",79
+2006,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",168
+2006,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",174
+2006,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",121
+2006,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1159
+2006,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",7
+2006,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1241
+2006,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",75
+2005,E12000001,North East,01 All drug poisonings,163
+2005,E12000002,North West,01 All drug poisonings,405
+2005,E12000003,Yorkshire and The Humber,01 All drug poisonings,295
+2005,E12000004,East Midlands,01 All drug poisonings,182
+2005,E12000005,West Midlands,01 All drug poisonings,235
+2005,E12000006,East of England,01 All drug poisonings,249
+2005,E12000007,London,01 All drug poisonings,399
+2005,E12000008,South East,01 All drug poisonings,403
+2005,E12000009,South West,01 All drug poisonings,258
+2005,E92000001,England,01 All drug poisonings,2589
+2005,J99000001,Non-residents,01 All drug poisonings,17
+2005,K04000001,England and Wales,01 All drug poisonings,2762
+2005,W92000004,Wales,01 All drug poisonings,156
+2005,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",74
+2005,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",176
+2005,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",162
+2005,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",74
+2005,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",126
+2005,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",104
+2005,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",175
+2005,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",197
+2005,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",134
+2005,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1222
+2005,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",7
+2005,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1311
+2005,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",82
+2004,E12000001,North East,01 All drug poisonings,181
+2004,E12000002,North West,01 All drug poisonings,417
+2004,E12000003,Yorkshire and The Humber,01 All drug poisonings,322
+2004,E12000004,East Midlands,01 All drug poisonings,209
+2004,E12000005,West Midlands,01 All drug poisonings,229
+2004,E12000006,East of England,01 All drug poisonings,254
+2004,E12000007,London,01 All drug poisonings,342
+2004,E12000008,South East,01 All drug poisonings,408
+2004,E12000009,South West,01 All drug poisonings,244
+2004,E92000001,England,01 All drug poisonings,2606
+2004,J99000001,Non-residents,01 All drug poisonings,20
+2004,K04000001,England and Wales,01 All drug poisonings,2787
+2004,W92000004,Wales,01 All drug poisonings,161
+2004,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",66
+2004,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",163
+2004,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",157
+2004,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",85
+2004,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",116
+2004,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",98
+2004,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",115
+2004,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",189
+2004,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",119
+2004,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1108
+2004,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",7
+2004,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1172
+2004,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",57
+2003,E12000001,North East,01 All drug poisonings,155
+2003,E12000002,North West,01 All drug poisonings,427
+2003,E12000003,Yorkshire and The Humber,01 All drug poisonings,292
+2003,E12000004,East Midlands,01 All drug poisonings,189
+2003,E12000005,West Midlands,01 All drug poisonings,219
+2003,E12000006,East of England,01 All drug poisonings,242
+2003,E12000007,London,01 All drug poisonings,338
+2003,E12000008,South East,01 All drug poisonings,329
+2003,E12000009,South West,01 All drug poisonings,234
+2003,E92000001,England,01 All drug poisonings,2425
+2003,J99000001,Non-residents,01 All drug poisonings,17
+2003,K04000001,England and Wales,01 All drug poisonings,2623
+2003,W92000004,Wales,01 All drug poisonings,181
+2003,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",61
+2003,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",165
+2003,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",141
+2003,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",78
+2003,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",103
+2003,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",85
+2003,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",124
+2003,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",145
+2003,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",105
+2003,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1007
+2003,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",8
+2003,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1093
+2003,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",78
+2002,E12000001,North East,01 All drug poisonings,190
+2002,E12000002,North West,01 All drug poisonings,423
+2002,E12000003,Yorkshire and The Humber,01 All drug poisonings,333
+2002,E12000004,East Midlands,01 All drug poisonings,211
+2002,E12000005,West Midlands,01 All drug poisonings,236
+2002,E12000006,East of England,01 All drug poisonings,249
+2002,E12000007,London,01 All drug poisonings,335
+2002,E12000008,South East,01 All drug poisonings,405
+2002,E12000009,South West,01 All drug poisonings,242
+2002,E92000001,England,01 All drug poisonings,2624
+2002,J99000001,Non-residents,01 All drug poisonings,23
+2002,K04000001,England and Wales,01 All drug poisonings,2830
+2002,W92000004,Wales,01 All drug poisonings,183
+2002,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",90
+2002,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",190
+2002,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",161
+2002,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",101
+2002,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",106
+2002,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",123
+2002,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",162
+2002,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",173
+2002,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",129
+2002,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1235
+2002,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",12
+2002,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1317
+2002,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",70
+2001,E12000001,North East,01 All drug poisonings,184
+2001,E12000002,North West,01 All drug poisonings,508
+2001,E12000003,Yorkshire and The Humber,01 All drug poisonings,322
+2001,E12000004,East Midlands,01 All drug poisonings,192
+2001,E12000005,West Midlands,01 All drug poisonings,248
+2001,E12000006,East of England,01 All drug poisonings,288
+2001,E12000007,London,01 All drug poisonings,428
+2001,E12000008,South East,01 All drug poisonings,429
+2001,E12000009,South West,01 All drug poisonings,285
+2001,E92000001,England,01 All drug poisonings,2884
+2001,J99000001,Non-residents,01 All drug poisonings,22
+2001,K04000001,England and Wales,01 All drug poisonings,3093
+2001,W92000004,Wales,01 All drug poisonings,187
+2001,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",94
+2001,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",244
+2001,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",165
+2001,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",93
+2001,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",117
+2001,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",125
+2001,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",223
+2001,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",215
+2001,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",147
+2001,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1423
+2001,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",11
+2001,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1509
+2001,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",75
+2000,E12000001,North East,01 All drug poisonings,148
+2000,E12000002,North West,01 All drug poisonings,481
+2000,E12000003,Yorkshire and The Humber,01 All drug poisonings,320
+2000,E12000004,East Midlands,01 All drug poisonings,177
+2000,E12000005,West Midlands,01 All drug poisonings,263
+2000,E12000006,East of England,01 All drug poisonings,253
+2000,E12000007,London,01 All drug poisonings,427
+2000,E12000008,South East,01 All drug poisonings,421
+2000,E12000009,South West,01 All drug poisonings,268
+2000,E92000001,England,01 All drug poisonings,2758
+2000,J99000001,Non-residents,01 All drug poisonings,22
+2000,K04000001,England and Wales,01 All drug poisonings,2932
+2000,W92000004,Wales,01 All drug poisonings,152
+2000,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",58
+2000,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",209
+2000,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",167
+2000,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",86
+2000,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",115
+2000,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",117
+2000,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",196
+2000,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",200
+2000,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",122
+2000,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1270
+2000,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",14
+2000,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1342
+2000,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",58
+1999,E12000001,North East,01 All drug poisonings,137
+1999,E12000002,North West,01 All drug poisonings,522
+1999,E12000003,Yorkshire and The Humber,01 All drug poisonings,356
+1999,E12000004,East Midlands,01 All drug poisonings,188
+1999,E12000005,West Midlands,01 All drug poisonings,271
+1999,E12000006,East of England,01 All drug poisonings,262
+1999,E12000007,London,01 All drug poisonings,492
+1999,E12000008,South East,01 All drug poisonings,392
+1999,E12000009,South West,01 All drug poisonings,312
+1999,E92000001,England,01 All drug poisonings,2932
+1999,J99000001,Non-residents,01 All drug poisonings,20
+1999,K04000001,England and Wales,01 All drug poisonings,3110
+1999,W92000004,Wales,01 All drug poisonings,158
+1999,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",42
+1999,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",203
+1999,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",178
+1999,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",81
+1999,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",102
+1999,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",110
+1999,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",240
+1999,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",160
+1999,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",144
+1999,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1260
+1999,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",14
+1999,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1332
+1999,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",58
+1998,E12000001,North East,01 All drug poisonings,140
+1998,E12000002,North West,01 All drug poisonings,474
+1998,E12000003,Yorkshire and The Humber,01 All drug poisonings,367
+1998,E12000004,East Midlands,01 All drug poisonings,178
+1998,E12000005,West Midlands,01 All drug poisonings,203
+1998,E12000006,East of England,01 All drug poisonings,244
+1998,E12000007,London,01 All drug poisonings,555
+1998,E12000008,South East,01 All drug poisonings,398
+1998,E12000009,South West,01 All drug poisonings,252
+1998,E92000001,England,01 All drug poisonings,2811
+1998,J99000001,Non-residents,01 All drug poisonings,16
+1998,K04000001,England and Wales,01 All drug poisonings,2976
+1998,W92000004,Wales,01 All drug poisonings,149
+1998,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",43
+1998,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",180
+1998,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",180
+1998,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",63
+1998,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",65
+1998,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",95
+1998,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",242
+1998,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",146
+1998,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",82
+1998,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1096
+1998,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",11
+1998,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1151
+1998,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",44
+1997,E12000001,North East,01 All drug poisonings,133
+1997,E12000002,North West,01 All drug poisonings,488
+1997,E12000003,Yorkshire and The Humber,01 All drug poisonings,297
+1997,E12000004,East Midlands,01 All drug poisonings,156
+1997,E12000005,West Midlands,01 All drug poisonings,203
+1997,E12000006,East of England,01 All drug poisonings,260
+1997,E12000007,London,01 All drug poisonings,480
+1997,E12000008,South East,01 All drug poisonings,377
+1997,E12000009,South West,01 All drug poisonings,250
+1997,E92000001,England,01 All drug poisonings,2644
+1997,J99000001,Non-residents,01 All drug poisonings,28
+1997,K04000001,England and Wales,01 All drug poisonings,2817
+1997,W92000004,Wales,01 All drug poisonings,145
+1997,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",27
+1997,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",208
+1997,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",113
+1997,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",42
+1997,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",60
+1997,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",93
+1997,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",200
+1997,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",125
+1997,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",99
+1997,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",967
+1997,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",18
+1997,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",1032
+1997,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",47
+1996,E12000001,North East,01 All drug poisonings,122
+1996,E12000002,North West,01 All drug poisonings,455
+1996,E12000003,Yorkshire and The Humber,01 All drug poisonings,289
+1996,E12000004,East Midlands,01 All drug poisonings,169
+1996,E12000005,West Midlands,01 All drug poisonings,196
+1996,E12000006,East of England,01 All drug poisonings,214
+1996,E12000007,London,01 All drug poisonings,407
+1996,E12000008,South East,01 All drug poisonings,373
+1996,E12000009,South West,01 All drug poisonings,253
+1996,E92000001,England,01 All drug poisonings,2478
+1996,J99000001,Non-residents,01 All drug poisonings,20
+1996,K04000001,England and Wales,01 All drug poisonings,2618
+1996,W92000004,Wales,01 All drug poisonings,120
+1996,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",24
+1996,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",196
+1996,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",97
+1996,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",40
+1996,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",61
+1996,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",67
+1996,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",168
+1996,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",128
+1996,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",92
+1996,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",873
+1996,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",11
+1996,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",914
+1996,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",30
+1995,E12000001,North East,01 All drug poisonings,112
+1995,E12000002,North West,01 All drug poisonings,479
+1995,E12000003,Yorkshire and The Humber,01 All drug poisonings,275
+1995,E12000004,East Midlands,01 All drug poisonings,152
+1995,E12000005,West Midlands,01 All drug poisonings,188
+1995,E12000006,East of England,01 All drug poisonings,212
+1995,E12000007,London,01 All drug poisonings,402
+1995,E12000008,South East,01 All drug poisonings,343
+1995,E12000009,South West,01 All drug poisonings,225
+1995,E92000001,England,01 All drug poisonings,2388
+1995,J99000001,Non-residents,01 All drug poisonings,25
+1995,K04000001,England and Wales,01 All drug poisonings,2540
+1995,W92000004,Wales,01 All drug poisonings,127
+1995,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",16
+1995,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",189
+1995,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",86
+1995,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",31
+1995,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",36
+1995,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",60
+1995,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",152
+1995,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",90
+1995,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",58
+1995,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",718
+1995,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",12
+1995,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",760
+1995,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",30
+1994,E12000001,North East,01 All drug poisonings,122
+1994,E12000002,North West,01 All drug poisonings,454
+1994,E12000003,Yorkshire and The Humber,01 All drug poisonings,196
+1994,E12000004,East Midlands,01 All drug poisonings,141
+1994,E12000005,West Midlands,01 All drug poisonings,192
+1994,E12000006,East of England,01 All drug poisonings,218
+1994,E12000007,London,01 All drug poisonings,441
+1994,E12000008,South East,01 All drug poisonings,271
+1994,E12000009,South West,01 All drug poisonings,191
+1994,E92000001,England,01 All drug poisonings,2226
+1994,J99000001,Non-residents,01 All drug poisonings,13
+1994,K04000001,England and Wales,01 All drug poisonings,2350
+1994,W92000004,Wales,01 All drug poisonings,111
+1994,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",20
+1994,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",181
+1994,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",50
+1994,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",24
+1994,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",36
+1994,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",48
+1994,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",159
+1994,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",69
+1994,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",38
+1994,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",625
+1994,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",3
+1994,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",648
+1994,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",20
+1993,E12000001,North East,01 All drug poisonings,87
+1993,E12000002,North West,01 All drug poisonings,400
+1993,E12000003,Yorkshire and The Humber,01 All drug poisonings,187
+1993,E12000004,East Midlands,01 All drug poisonings,128
+1993,E12000005,West Midlands,01 All drug poisonings,204
+1993,E12000006,East of England,01 All drug poisonings,183
+1993,E12000007,London,01 All drug poisonings,410
+1993,E12000008,South East,01 All drug poisonings,301
+1993,E12000009,South West,01 All drug poisonings,169
+1993,E92000001,England,01 All drug poisonings,2069
+1993,J99000001,Non-residents,01 All drug poisonings,15
+1993,K04000001,England and Wales,01 All drug poisonings,2178
+1993,W92000004,Wales,01 All drug poisonings,94
+1993,E12000001,North East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",13
+1993,E12000002,North West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",108
+1993,E12000003,Yorkshire and The Humber,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",40
+1993,E12000004,East Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",16
+1993,E12000005,West Midlands,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",38
+1993,E12000006,East of England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",29
+1993,E12000007,London,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",120
+1993,E12000008,South East,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",53
+1993,E12000009,South West,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",27
+1993,E92000001,England,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",444
+1993,J99000001,Non-residents,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",5
+1993,K04000001,England and Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",471
+1993,W92000004,Wales,"02 Any opiate (includes unspecified opiates, excludes paracetamol compounds)",22
