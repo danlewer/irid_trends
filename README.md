@@ -2,7 +2,7 @@
 
 ## Population estimates
 
-From [Nomis](https://nomisweb.co.uk) "Population estimates - local authority based by single year of age"
+From [Office for National Statistics - Nomis](https://www.nomisweb.co.uk/datasets/pestsyoala) "Population estimates - local authority based by single year of age"
 
 ## Local authority code lookup 
 
