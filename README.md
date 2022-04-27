@@ -2,7 +2,7 @@
 
 ## Population estimates
 
-From [Nomis](nomisweb.co.uk) "Population estimates - local authority based by single year of age"
+From [Nomis](https://nomisweb.co.uk) "Population estimates - local authority based by single year of age"
 
 ## Local authority code lookup 
 
@@ -13,7 +13,7 @@ https://www.ons.gov.uk/file?uri=/census/2011census/consultationsusersandlocalpar
 
 From Office for National Statistics:
 
-England & Wales: (https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsrelatedtodrugpoisoningbydateofoccurrence)[Deaths related to drug poisoning by date of occurrence]
+England & Wales: [Deaths related to drug poisoning by date of occurrence](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsrelatedtodrugpoisoningbydateofoccurrence)
 
-Local authority-level data: (https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/drugmisusedeathsbylocalauthority)[Drug-related deaths by local authority, England and Wales]
+Local authority-level data: [Drug-related deaths by local authority, England and Wales](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/drugmisusedeathsbylocalauthority)
 
