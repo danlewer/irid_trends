@@ -18,8 +18,7 @@ From [Office for National Statistics - Nomis](https://www.nomisweb.co.uk/dataset
 
 ### Local authority code lookup 
 
-Derived from:
-https://www.ons.gov.uk/file?uri=/census/2011census/consultationsusersandlocalpartners/censusadvisorygroups/censusgeneralcag/categorisationoflsoasfor2011censustcm77269651.xls
+Derived from an [ONS spreadsheet](https://www.ons.gov.uk/file?uri=/census/2011census/consultationsusersandlocalpartners/censusadvisorygroups/censusgeneralcag/categorisationoflsoasfor2011censustcm77269651.xls) providing a lookup between LSOAs and local authority / region.
 
 ### Drug-related deaths in England & Wales
 
