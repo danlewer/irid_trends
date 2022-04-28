@@ -25,8 +25,6 @@ https://www.ons.gov.uk/file?uri=/census/2011census/consultationsusersandlocalpar
 
 From Office for National Statistics:
 
-England & Wales: [Deaths related to drug poisoning by date of occurrence](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsrelatedtodrugpoisoningbydateofoccurrence)
-
 England & Wales: [Deaths related to drug poisoning by selected substances](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsrelatedtodrugpoisoningbyselectedsubstances)
 
 Local authority-level data: [Drug-related deaths by local authority, England and Wales](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/drugmisusedeathsbylocalauthority)
