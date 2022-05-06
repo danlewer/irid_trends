@@ -11,6 +11,30 @@ yax <- function(x, tickabove = F, ntick = 5) { # create axis tick-points: https:
   d[seq_len(i)]
 }
 
+#  ::::::::::::::::
+#  Histogram of age
+#  ................
+
+age_hist <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_histogram_6may2022.csv'))
+age_qs <- quantile(rep(age_hist$STARTAGE, age_hist$n), probs = c(0.25, 0.5, 0.75))
+
+png('age_histogram.png', height = 7, width = 9, units = 'in', res = 300)
+
+par(mar = c(5, 5, 2, 1), xpd = NA)
+plot(1, type = 'n', xlim = c(15, 65), ylim = c(0, 5500), axes = F, xlab = NA, ylab = NA)
+axis(1, 15:65, labels = F, pos = 0, tck = -0.007)
+axis(1, seq(15, 65, 5), labels = T, pos = 0, tck = -0.02)
+axis(2, seq(0, 5500, 500), pos = 15, las = 2)
+segments(15, 5500, x1 = 65)
+segments(65, 0, y1 = 5500)
+segments(age_qs, 0, y1 = 5500, lty = 2)
+text(age_qs, 5800, paste0(c('Lower Q.', 'Median', 'Upper Q.'), '\n', age_qs))
+rect(15:64, 0, 16:65, age_hist$n, col = viridis(6)[5])
+title(xlab = 'Age at admission', line = 2)
+title(ylab = 'Number of admissions, 1998-2021')
+
+dev.off()
+
 #  ======================================================
 #  Compare DRDs with injecting-related infections by year
 #  ------------------------------------------------------
