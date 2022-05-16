@@ -5,7 +5,7 @@
 ## Contents
 
 1. SQL queries for extracting data from Hospital Episode Statistics: [extracting admissions for injecting-related infections](https://github.com/danlewer/irid_trends/blob/main/HES_query.sql) and [counting emergency admissions per day](https://github.com/danlewer/irid_trends/blob/main/HES_query_comparison_counts.sql)
-2. R code used to analyse raw HES data (ie. requires HES data that is not saved in this repository to maintain confidentiality)
+2. [R code](https://github.com/danlewer/irid_trends/blob/main/process_raw_HES.R) used to analyse raw HES data (ie. requires HES data that is not saved in this repository to maintain confidentiality)
 3. [Non-identifiable summary tables](https://github.com/danlewer/irid_trends/tree/main/summary_tables) of HES data, generated using R code
 4. [Other inputs](https://github.com/danlewer/irid_trends/tree/main/input_data) (eg. population estimates, numbers of drug-related deaths)
 5. [R code](https://github.com/danlewer/irid_trends/blob/main/final_outputs.R) used to generate final outputs - this code can be run using the data provided in this repository, and reads CSV files directly from Github (ie. you do not need to download data).
