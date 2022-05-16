@@ -1,0 +1,241 @@
+region,year,q0.05,q0.25,q0.5,q0.75,q0.95
+North East,2002,21,24,29,34,42.4
+North West,2002,22,28,32,36,44
+Yorkshire & Humber,2002,20,24,28,33,40
+East Midlands,2002,20,25,29,35,41
+West Midlands,2002,21,25,29,33,41.95
+East of England,2002,21,27,32,37,48.4
+London,2002,22.1,30,35,40,49
+South East,2002,22,27,31,37,43
+South West,2002,22,27,31,37,46
+No fixed abode,2002,21,25,30,35,43
+Unknown,2002,21,28,33,38,48.1
+North East,2003,20,24,28,32,40
+North West,2003,23,28,32,36,44
+Yorkshire & Humber,2003,20.3,25,29,33,40
+East Midlands,2003,21,25,29,34,41
+West Midlands,2003,21,24,30,35,43
+East of England,2003,22,26,32,36,43
+London,2003,23.7,30,34,39,48
+South East,2003,22,27,32,37,45.85
+South West,2003,22,26,31,36,44.85
+No fixed abode,2003,22,26,30,36,41
+Unknown,2003,20.65,28,33,36,41
+North East,2004,20,25,29,33,41
+North West,2004,23,29,33,38,47
+Yorkshire & Humber,2004,21,26,30,35,42
+East Midlands,2004,22,25,29,33,42
+West Midlands,2004,22,25,29,34,43
+East of England,2004,21,26,32,37,46.1
+London,2004,24,31,37,42,51.6
+South East,2004,23,27,32,37,47
+South West,2004,22.2,27,32,37,44
+No fixed abode,2004,23,27,31,35,42.45
+Unknown,2004,23,30,34,37,41.8
+North East,2005,22.05,26,30,34,45
+North West,2005,24,30,34,39,46
+Yorkshire & Humber,2005,22,26,30,35,42
+East Midlands,2005,22,26,30,34,43
+West Midlands,2005,21,26,30,36,48
+East of England,2005,20,28,32,37,46
+London,2005,25,31,36,41,50.4
+South East,2005,23,27,32,39,49
+South West,2005,23,28,33,37,44
+No fixed abode,2005,23.6,30,33,38,41.4
+Unknown,2005,25,27,32,38,44
+North East,2006,23,27,31,35,43
+North West,2006,24,31,35,39,46
+Yorkshire & Humber,2006,23,26,31,35,43
+East Midlands,2006,22,27,31,35,43
+West Midlands,2006,22,26,29,35,43
+East of England,2006,24.25,29,34.5,40,48
+London,2006,26,33,38,42,52
+South East,2006,22,26,33,40,50
+South West,2006,23,27,32,37,44.5
+No fixed abode,2006,25.45,31,33,37,43
+Unknown,2006,23,28.75,33,40,47
+North East,2007,23,28,32,36,43.15
+North West,2007,25,31,35,40,47
+Yorkshire & Humber,2007,23,27,32,36,45
+East Midlands,2007,23,27,31,37,44
+West Midlands,2007,21,27,31,36,43.1
+East of England,2007,25,29,34,40,45
+London,2007,25,32,38,43,51
+South East,2007,24,29,35,39,49
+South West,2007,24,28,32,38,47
+No fixed abode,2007,21,28.5,35,38,44
+Unknown,2007,24.8,30.5,34,39,46.1
+North East,2008,22,28,32,36,44
+North West,2008,25.55,32,36,41,48
+Yorkshire & Humber,2008,24,29,33,38,46
+East Midlands,2008,23,28,33,38,43
+West Midlands,2008,23,27,32,37,47
+East of England,2008,25,31,36,42,50
+London,2008,26.8,33,39,44,54
+South East,2008,24,30,36,41,49.25
+South West,2008,23,28,33,39,48
+No fixed abode,2008,23.25,29,34,37,45
+Unknown,2008,27.45,33.25,37.5,41,45
+North East,2009,23.6,28,33,37,43
+North West,2009,26,33,37,42,49
+Yorkshire & Humber,2009,25,29,34,38,46
+East Midlands,2009,25,29,33,38,45.95
+West Midlands,2009,23,28,33,39,47
+East of England,2009,26,31,36,41,51
+London,2009,25,34,40,44,54.8
+South East,2009,24,32,36,40.75,50
+South West,2009,23,29,34,40,48.35
+No fixed abode,2009,24,31,35,39,46
+Unknown,2009,26.7,31,36,39.5,47.9
+North East,2010,25,29,33,38,45
+North West,2010,27,33,38,43,50
+Yorkshire & Humber,2010,25,30,34,39,47
+East Midlands,2010,24,28,33,37,45.75
+West Midlands,2010,23,29,33,39,47
+East of England,2010,23,30,35,41,53
+London,2010,28,34.75,40,45,55
+South East,2010,25,31,36,42,51.3
+South West,2010,23,30,35,41,49.15
+No fixed abode,2010,24,30,35,40,45
+Unknown,2010,22.95,30,36,40,49.45
+North East,2011,26,30,34,39,45
+North West,2011,26,34,39,43,50
+Yorkshire & Humber,2011,25,31,35,39,47
+East Midlands,2011,24,30,34,38,46.55
+West Midlands,2011,24,29,33,38.5,47
+East of England,2011,28,33,36,41,53
+London,2011,26,33,39,45,56
+South East,2011,25,32,37,43,52
+South West,2011,25,31,36,42,51
+No fixed abode,2011,23.6,30,36,41,48
+Unknown,2011,25,32,37,40.75,48
+North East,2012,27,31,35,38,45
+North West,2012,26,33,39,43,49
+Yorkshire & Humber,2012,26,31,34,40,48
+East Midlands,2012,26,30,34,38,47.95
+West Midlands,2012,25,30,34,40,47.55
+East of England,2012,27,33,37.5,43,50.55
+London,2012,24,32,38,43,53.75
+South East,2012,26,32,37,42,51
+South West,2012,23.6,30,37,43,50
+No fixed abode,2012,27,32,37,41,44
+Unknown,2012,27,33,37,41,49
+North East,2013,26.6,31,35,39,47
+North West,2013,27,34,39,44,50
+Yorkshire & Humber,2013,26,32,35,40.5,47.6999999999999
+East Midlands,2013,26,31,35,40,47.1
+West Midlands,2013,25.3,31,35,40,50
+East of England,2013,27.95,32,37,43,51
+London,2013,27,34,41,45.5,55
+South East,2013,27,33,38,43,51
+South West,2013,24,31,36,41,49
+No fixed abode,2013,26,32,38,42,49
+Unknown,2013,25.85,31.25,37,43,48
+North East,2014,27,32,36,40,48
+North West,2014,28,35,40,45,52
+Yorkshire & Humber,2014,27,32,36,41,48.5999999999999
+East Midlands,2014,25,31,35,41,48
+West Midlands,2014,26,32,36,41,49
+East of England,2014,28,31,36,42,54
+London,2014,27,35,42,48,57
+South East,2014,26,32,38,44,52
+South West,2014,25,32,36,42,50
+No fixed abode,2014,25,32,38,42,47.1
+Unknown,2014,26,31,37,42,47
+North East,2015,27.85,32,35.5,40,47
+North West,2015,28,36,41,46,53
+Yorkshire & Humber,2015,27,33,37,43,52
+East Midlands,2015,26.6,32,36,42,49
+West Midlands,2015,27,31.25,37,41,50.75
+East of England,2015,25,32,38,44,54
+London,2015,27,34,40,47,55.35
+South East,2015,28,33,38,44,51
+South West,2015,26,32,37,43,53
+No fixed abode,2015,27,32,37,42,49.7
+Unknown,2015,28,34,38.5,44,50
+North East,2016,28,34,37,41,48
+North West,2016,28,36,41,46,52
+Yorkshire & Humber,2016,28,34,38,43,52
+East Midlands,2016,26,32,37,42,51
+West Midlands,2016,27,33,37,43,51
+East of England,2016,26,33.75,40,45,55
+London,2016,28,36,41,47,55
+South East,2016,28,34,39,45,54
+South West,2016,27,33,38,44,53
+No fixed abode,2016,24,31,35,40,50
+Unknown,2016,28,33,38,42.75,51
+North East,2017,27,33,37,42,48
+North West,2017,29,36,42,47,53.1500000000001
+Yorkshire & Humber,2017,27,34,39,43,52
+East Midlands,2017,26,33,37,42,50
+West Midlands,2017,27.35,33.75,37,43,51
+East of England,2017,26.15,34,38,45,55
+London,2017,28,36,42,48,56.05
+South East,2017,27,34,38,44,52
+South West,2017,27,35,39,44,52.8
+No fixed abode,2017,26,32,37,41,48
+Unknown,2017,26.4,32,36,42,51.6
+North East,2018,28.5,35,38,43,51
+North West,2018,29,36,42,47,54
+Yorkshire & Humber,2018,29,35,39,45,52
+East Midlands,2018,28,35,39,45,53
+West Midlands,2018,28,34,38,43,51
+East of England,2018,28,34,38.5,45,52
+London,2018,30,37,43,50,56
+South East,2018,28,35,41,46,54.7
+South West,2018,27,35,40,45,53
+No fixed abode,2018,26,33,38,43,49
+Unknown,2018,26,33,38,43,49.75
+North East,2019,26.25,34,38,43,52
+North West,2019,30,37,43,48,55
+Yorkshire & Humber,2019,29,36,40,45,53
+East Midlands,2019,27,35,40,46,54
+West Midlands,2019,29,34,38,44,52
+East of England,2019,30,35,41,47,55
+London,2019,30,38,44,51,58.8
+South East,2019,29,36,41,47,56
+South West,2019,27,34,40,46,54
+No fixed abode,2019,27.25,34,38,43,51
+Unknown,2019,28,34,39,43,50
+North East,2020,28,35,40,45,54
+North West,2020,31,38,43,49,56
+Yorkshire & Humber,2020,31,37,41,46,54
+East Midlands,2020,29.3,35,39,45,51
+West Midlands,2020,29,36,40,44,53.2
+East of England,2020,29,37,41,46,55
+London,2020,29.25,38.25,44,50,59
+South East,2020,28,34,41,47,57
+South West,2020,26,36,40,45,54
+No fixed abode,2020,27,33,38,44,50
+Unknown,2020,30,34,38,43.25,52.7
+North East,2021,28.2,37,40,45,54
+North West,2021,32,39,43,48,58
+Yorkshire & Humber,2021,30,37,41,46,53
+East Midlands,2021,29.3,36.5,40,48,52.7
+West Midlands,2021,29.85,36,40,44.75,52.3
+East of England,2021,34,37.75,42,48.25,56.7
+London,2021,29.1,39,44,50,60.8
+South East,2021,30.7,35,43,48,55.3
+South West,2021,26.9,34,40,47,54
+No fixed abode,2021,28.8,34,39,41,51.1
+Unknown,2021,30,37,42,48,56
+England,2002,21,26,31,36,44
+England,2003,21,26,31,36,43
+England,2004,22,27,31,37,45
+England,2005,23,28,32,38,46
+England,2006,23,28,33,38,46
+England,2007,23,29,34,39,47
+England,2008,24,29,35,39,48
+England,2009,24,30,35,41,49
+England,2010,25,30,36,41,50
+England,2011,25,31,36,41,50
+England,2012,26,31,36,42,49
+England,2013,26,32,37,42,50
+England,2014,27,32,37,43,51
+England,2015,27,33,38,43,52
+England,2016,27,34,38,44,52
+England,2017,27,34,39,44,52
+England,2018,28,35,39,45,53
+England,2019,28,35,40,46,54
+England,2020,29,36,41,47,55
+England,2021,30,37,42,47,56
