@@ -43,7 +43,8 @@ icd10 <- list(
 # read patient-level HES data
 # ---------------------------
 
-d_raw <- fread("irid_hes_extract_6may2022.csv")
+d_raw <- fread("irid_hes_extract_17may2022.csv")
+
 d <- copy(d_raw)
 
 # ================
@@ -104,12 +105,16 @@ d$diagnosis[rowSums(diagpos) == 0] <- 'missing'
 d[, diagnosis := factor(diagnosis, c(names(icd10), 'missing'))]
 
 # Admission ID & discharge method
+d <- d[year >= 2002 & year <= 2021] # TOKEN_PERSON_ID missing before 2001
 make_ad_ID <- unique(d[, c('TOKEN_PERSON_ID', 'ADMIDATE')])
 make_ad_ID[, adID := .I]
 d <- make_ad_ID[d, on = c('TOKEN_PERSON_ID', 'ADMIDATE')]
 d <- d[, .(maxEPIORDER = max(EPIORDER)), adID][d, on = 'adID']
-d <- d[EPIORDER == maxEPIORDER, .(adID = adID, finalDis = DISMETH)][d, on = 'adID']
-d[, finalDis := factor(finalDis, c(1, 2, 4, 3, 8, 9), c('normal', 'DAMA', 'died', 'other', 'other', 'other'))]
+disMeth <- unique(d[EPIORDER == maxEPIORDER, .(adID = adID, finalDis = DISMETH)])
+disMeth[, finalDis := factor(finalDis, c(4, 2, 1, 3, 8, 9), c('died', 'DAMA', 'normal', 'other', 'other', 'other'))]
+disMeth <- disMeth[, .(finalDis = min(as.integer(finalDis))), adID]
+disMeth[, finalDis := factor(finalDis, 1:4, c('died', 'DAMA', 'normal', 'other'))]
+d <- disMeth[d, on = 'adID']
 
 # dummy variable
 d[, total := 1]
@@ -118,7 +123,6 @@ d[, total := 1]
 # exclude ineligible episodes
 # ---------------------------
 
-d <- d[year >= 2002 & year <= 2021]
 d <- d[EPIORDER == 1]
 d <- d[EPISTAT == 3]
 d <- d[!is.na(STARTAGE)]
@@ -269,18 +273,22 @@ simE <- simRate * la_count$refpop
 simNames <- paste0('sim', seq_len(B))
 colnames(simE) <- simNames
 la_count <- cbind(la_count, simE)
-simSR <- la_count[, lapply(.SD, function (x) sum(x) / sum(refpop) * 1000000), .SD = simNames, c('period', 'LAD10CD')]
-simSR <- cbind(simSR[, c('period', 'LAD10CD')], t(apply(as.matrix(simSR[, simNames, with = F]), 1, quantile, probs = c(0.5, 0.025, 0.975))))
+simSR_byPeriod <- la_count[, lapply(.SD, function (x) sum(x) / sum(refpop) * 1000000), .SD = simNames, c('period', 'LAD10CD')]
+simSR_byPeriod <- cbind(simSR_byPeriod[, c('period', 'LAD10CD')], t(apply(as.matrix(simSR_byPeriod[, simNames, with = F]), 1, quantile, probs = c(0.5, 0.025, 0.975))))
+simSR_allPeriod <- la_count[, lapply(.SD, function (x) sum(x) / sum(refpop) * 1000000), .SD = simNames, 'LAD10CD']
+simSR_allPeriod <- cbind(simSR_allPeriod[, 'LAD10CD'], t(apply(as.matrix(simSR_allPeriod[, simNames, with = F]), 1, quantile, probs = c(0.5, 0.025, 0.975))))
+simSR <- rbind(simSR_byPeriod, simSR_allPeriod, fill = T)
 
 # point estimates
 
 la_count[, (simNames) := NULL]
 la_count[, rate := N / pop]
 la_count[, e := rate * refpop]
-simSR <- la_count[, .(sr = sum(e) / sum(refpop) * 1000000), c('period', 'LAD10CD')][simSR, on = c('period', 'LAD10CD')]
+simSR <- rbind(la_count[, .(sr = sum(e) / sum(refpop) * 1000000), c('period', 'LAD10CD')],
+               la_count[, .(sr = sum(e) / sum(refpop) * 1000000), 'LAD10CD'], fill = T)[simSR, on = c('period', 'LAD10CD')]
 simSR <- la_lookup[simSR, on = 'LAD10CD']
 
-fwrite(simSR, 'standardised_rate_by_LA_16may2022.csv')
+fwrite(simSR, 'standardised_rate_by_LA_18may2022.csv')
 
 # =================
 # estimate of costs
