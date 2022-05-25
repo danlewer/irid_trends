@@ -3,8 +3,10 @@ library(rgdal)
 library(maptools)
 gpclibPermit()
 library(ggplot2)
+library(extrafont)
+loadfonts(device = "win")
 
-la_rate <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/standardised_rate_by_LA_18may2022.csv'))
+la_rate <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/standardised_rate_by_LA_25may2022.csv'))
 la_rate <- la_rate[is.na(la_rate$period),]
 
 # from https://geoportal.statistics.gov.uk/datasets/ons::local-authority-districts-december-2017-boundaries-gb-buc/about
@@ -14,11 +16,11 @@ y <- fortify(tract, region = 'LAD17CD')
 y <- y[substr(y$id, 0, 1) == 'E',]
 
 cols <- colorRampPalette(c('white', "#E41A1C", 'black'))(50)
-cols <- cols[1:45]
+cols <- cols[1:40]
 
 la_rate <- merge(data.frame(LAD10CD = unique(y$id)), la_rate, all.x = T)
 
-png('admission_rate_map.png', height = 7, width = 8, units = 'in', res = 300)
+png('admission_rate_map.png', height = 7, width = 8, units = 'in', res = 300, family = 'Georgia')
 
 ggplot() + 
   geom_map(data = la_rate, aes(map_id=LAD10CD, fill = sr), map=y) +
