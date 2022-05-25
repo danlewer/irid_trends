@@ -2,6 +2,8 @@ library(data.table)
 library(RColorBrewer)
 library(viridisLite)
 library(devEMF)
+library(extrafont)
+loadfonts(device = "win")
 
 yax <- function(x, tickabove = F, ntick = 5) { # create axis tick-points: https://gist.github.com/danlewer/8ec82abcbeb9e5b1ad08dab02a0091a2
   l <- c(c(1, 2, 4, 5, 25) %o% 10^(0:8))
@@ -16,7 +18,7 @@ yax <- function(x, tickabove = F, ntick = 5) { # create axis tick-points: https:
 #  Histogram of age
 #  ................
 
-age_hist <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_histogram_16may2022.csv'))
+age_hist <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_histogram_25may2022.csv'))
 age_qs <- quantile(rep(age_hist$STARTAGE, age_hist$n), probs = c(0.25, 0.5, 0.75))
 
 emf('age_histogram.emf', height = 5, width = 5, family = 'Georgia')
@@ -42,7 +44,7 @@ dev.off()
 
 drds <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/input_data/drug_poisoning_registrations.csv'))
 setDT(drds)
-admissions <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_27april2022.csv'))
+admissions <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_25may2022.csv'))
 setDT(admissions)
 
 drd_summary <- drds[Substance == '01 All drug poisonings' & Usual.residence.name == 'England' & Year.of.death.registration >= 1998, .(drds = sum(Deaths)), Year.of.death.registration]
@@ -61,7 +63,8 @@ yx1 <- yax(ymax * ref_year[, admissions], ntick = 6)
 yx2 <- yax(ymax * ref_year[, drds], ntick = 8)
 cols <- brewer.pal(3, 'Set1')
 
-emf('admissions_vs_drds.emf', height = 5, width = 6, family = 'Georgia')
+# emf('admissions_vs_drds.emf', height = 5, width = 6, family = 'Georgia')
+png('admissions_vs_drds.png', height = 5, width = 6, units = 'in', res = 300, family = 'Georgia')
 
 par(xpd = NA, mar = c(6, 6, 1, 6))
 plot(1, type = 'n', ylim = c(0, ymax), xlim = c(2001, 2022), axes = F, xlab = NA, ylab = NA)
@@ -92,7 +95,7 @@ dev.off()
 #  Age-stratified counts by year
 #  -----------------------------
 
-yrAge <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_27april2022.csv'))
+yrAge <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_25may2022.csv'))
 
 # change from 2011 - 2021 by age group
 decade <- xtabs(admissions ~ age_group + year, yrAge[yrAge$year %in% c(2011, 2021),])
@@ -104,14 +107,14 @@ yrAge <- rbind(0, yrAge)
 yrAgeCum <- apply(yrAge, 2, cumsum)
 xleft <- matrix(rep(2002:2021, 5), ncol = length(2002:2021), byrow = T)
 
-age_quantiles <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_quantiles_16may2022.csv'))
+age_quantiles <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_quantiles_25may2022.csv'))
 age_quantiles <- age_quantiles[age_quantiles$region == 'England',]
 age_quantiles <- age_quantiles[, c(3:7)]
 
 cols <- viridis(5)
 
 #emf('count_and_boxplot.emf', height = 14, width = 9, family = 'Georgia')
-png('count_and_boxplot.png', height = 14, width = 9, units = 'in', res = 300)
+png('count_and_boxplot.png', height = 14, width = 9, units = 'in', res = 300, family = 'Georgia')
 
 par(mar = c(4, 5, 1, 10), xpd = NA, mfrow = c(2, 1))
 
@@ -158,52 +161,57 @@ dev.off()
 #  COVID19
 #  -------
 
-irid_monthly <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/monthly_from_jan2018_27april2022.csv'))
-other_monthly <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/monthly_trends_other_causes_27april2022.csv'))
+irid_monthly <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/monthly_from_jan2018_25may2022.csv'))
+other_monthly <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/monthly_trends_other_causes_25may2022.csv'))
 setDT(irid_monthly); setDT(other_monthly)
+names(other_monthly)[1] <- 'admiMonth'
 irid_monthly <- other_monthly[irid_monthly, on = 'admiMonth']
 month_names <- c(outer(month.abb, paste0(' ', 2018:2021), paste0))
 irid_monthly[, admiMonth := factor(admiMonth, month_names)]
 irid_monthly <- irid_monthly[order(admiMonth)]
-index <- irid_monthly[, lapply(.SD, function (x) x / x[1] * irid_monthly$N[1]), .SDcols = names(irid_monthly)[-1]]
+
+index1 <- irid_monthly[, -1][, lapply(.SD, function (x) x / max(x, na.rm = T))]
+index2 <- irid_monthly[, -1][, lapply(.SD, function (x) x / x[1])]
+index3 <- irid_monthly[, -1][, lapply(.SD, function (x) x / x[1] * irid_monthly$N[1])]
 
 lockdown <- which(irid_monthly$admiMonth == 'Mar 2020')
-
 xs <- seq_along(irid_monthly$admiMonth)
 linesb <- function (x, y, ...) {
   points(x, y, pch = 19, ...)
   lines(x, y, ...)
 }
-cols <- brewer.pal(4, 'Set1')
+yx2 <- seq(0, 1.6, 0.2)
+comps <- c('N', 'drugs', 'alcohol', 'asthma', 'intestinal_infections', 'resp_infections', 'all_cause')
+label <- c('Injecting-related infections', 'Illicit drugs', 'Alcohol', 'Asthma', 'Intestinal Infections', 'Respiratory infections (ex. COVID-19)', 'All cause')
+cols <- c('black', brewer.pal(length(comps) - 1, 'Paired'))
 
-yx2 <- seq(0, 1.4, 0.2)
+emf('covid19.emf', height = 7, width = 14, family = 'Georgia')
 
-emf('covid19.emf', height = 7, width = 11, family = 'Georgia')
-
-par(xpd = NA, mar = c(6, 5, 2, 16))
-plot(1, type = 'n', xlim = c(0, 48), ylim = c(0, 800), ylab = NA, xlab = NA, axes = F)
-rect(lockdown, 0, lockdown + 4, 800, col = 'grey87', border = NA)
-text(lockdown, 840, 'First\nLockdown', adj = 0)
+par(xpd = NA, mar = c(6, 5, 2, 22))
+plot(1, type = 'n', xlim = c(0, 48), ylim = c(0, 900), ylab = NA, xlab = NA, axes = F)
+segments(irid_monthly[, grep('Jan', admiMonth)], 0, y1 = 900)
+rect(lockdown, 0, lockdown + 4, 900, col = 'grey87', border = NA)
+text(lockdown, 940, 'First\nLockdown', adj = 0)
 axis(1, xs, labels = F, pos = 0, tck = -0.01)
 axis(1, xs[grepl('Jan', irid_monthly$admiMonth)], pos = 0, labels = F, tck = -0.02)
 text(xs[grepl('Jan', irid_monthly$admiMonth)], -30, irid_monthly$admiMonth[grepl('Jan', irid_monthly$admiMonth)], srt = 60, adj = 1)
-axis(2, 0:8 * 100, pos = 1, las = 2)
+axis(2, 0:9 * 100, pos = 1, las = 2)
 axis(4, yx2 * irid_monthly$N[1], yx2, pos = 48, las = 2)
-segments(1, 800, x1 = 48)
-segments(48, 0, y1 = 800)
-with(index, {
-  linesb(xs, N, lwd = 1.5)
-  linesb(xs, all_cause, col = cols[1], lty = 3, cex = 0.6)
-  linesb(xs, asthma, col = cols[2], lty = 3, cex = 0.6)
-  linesb(xs, appendix, col = cols[3], lty = 3, cex = 0.6)
-  linesb(xs, diabetes, col = cols[4], lty = 3, cex = 0.6)
-})
-mtext('Count of admissions due to\ninjecting-related infections', side = 2, line = 2.5)
+segments(1, 900, x1 = 48)
+segments(48, 0, y1 = 900)
+mapply(linesb, 
+       x = list(xs), 
+       y = index3[, comps, with = F], 
+       col = cols, 
+       lwd = c(2, rep(1, length(comps)-1)),
+       cex = c(1, rep(0.6, length(comps)-1)),
+       lty = c(1, rep(3, length(comps)-1)))
+mtext('Montly emergency admissions among patients aged 15-64', side = 2, line = 2.5)
 mtext('Ratio of admissions\nvs. Jan 2018', side = 4, line = 3)
 title(xlab = 'Date of admission', line = 4)
-ys <- seq(600, 800, length.out = 5)
-segments(54, ys, x1 = 57, col = c(cols, 'black'), lty = c(3, 3, 3, 3, 1), lwd = c(1, 1, 1, 1, 1.5))
-points(rep(55.5, 5), ys, col = c(cols, 'black'), cex = c(0.6, 0.6, 0.6, 0.6, 1), pch = 19)
-text(57.5, ys, c('All cause', 'Asthma', 'Appendix', 'Diabetes', 'Injecting-related infections'), adj = 0)
+ys <- seq(600, 900, length.out = length(comps))
+segments(54, ys, x1 = 57, col = cols)
+points(rep(55.5, length(comps)), ys, col = cols, pch = 19)
+text(57.5, ys, label, adj = 0)
 
 dev.off()
