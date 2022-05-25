@@ -20,7 +20,7 @@ cols <- cols[1:40]
 
 la_rate <- merge(data.frame(LAD10CD = unique(y$id)), la_rate, all.x = T)
 
-png('admission_rate_map.png', height = 7, width = 8, units = 'in', res = 300, family = 'Georgia')
+emf('admission_rate_map.emf', height = 7, width = 8, family = 'Georgia')
 
 ggplot() + 
   geom_map(data = la_rate, aes(map_id=LAD10CD, fill = sr), map=y) +
@@ -31,4 +31,33 @@ ggplot() +
 
 dev.off()
 
-head(la_rate[order(la_rate$sr, decreasing = T),], 10)
+setDT(la_rate)
+
+head(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')], 10)
+
+> head(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')], 10)
+#                     GOR_NAME                   LA09_NAME       sr    X2.5.   X97.5.
+# 1:               North East                  Hartlepool 907.0401 847.8065 970.1319
+# 2:               North West                   Blackpool 766.4197 722.5797 809.4041
+# 3:            East Midlands                   Mansfield 759.0841 708.8277 811.3660
+# 4:               North East               Middlesbrough 578.9489 544.7181 616.1633
+# 5: Yorkshire and The Humber Kingston upon Hull, City of 557.4561 531.6575 582.7277
+# 6:               North West                   Liverpool 491.8319 473.7993 510.8267
+# 7: Yorkshire and The Humber                   Doncaster 463.3658 440.8509 485.4299
+# 8:            East Midlands                Chesterfield 442.5087 405.1735 480.5413
+# 9:            East Midlands                     Lincoln 442.0698 404.0684 482.2432
+# 10: Yorkshire and The Humber                    Barnsley 430.0150 405.3242 457.4570
+
+tail(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')][!is.na(sr)], 10)
+
+#           GOR_NAME            LA09_NAME       sr     X2.5.   X97.5.
+# 1:      South East    South Oxfordshire 28.37864 18.999834 38.29632
+# 2:          London            Redbridge 28.00547 22.272514 34.23425
+# 3:      South East Reigate and Banstead 27.73296 18.954504 37.42737
+# 4: East of England         Three Rivers 25.91035 14.301470 38.36472
+# 5: East of England        Epping Forest 24.97403 16.060079 34.01319
+# 6:      South East      Epsom and Ewell 24.89470  7.417509 45.13316
+# 7:          London               Harrow 24.70610 18.183995 31.70259
+# 8:          London               Merton 22.66736 17.183979 28.91213
+# 9:          London              Enfield 22.20139 17.441375 27.88017
+# 10: East of England            Braintree 20.28892 11.823847 29.97468
