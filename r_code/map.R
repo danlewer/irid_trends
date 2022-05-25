@@ -35,7 +35,6 @@ setDT(la_rate)
 
 head(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')], 10)
 
-> head(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')], 10)
 #                     GOR_NAME                   LA09_NAME       sr    X2.5.   X97.5.
 # 1:               North East                  Hartlepool 907.0401 847.8065 970.1319
 # 2:               North West                   Blackpool 766.4197 722.5797 809.4041
