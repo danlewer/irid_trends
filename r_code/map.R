@@ -9,6 +9,10 @@ loadfonts(device = "win")
 la_rate <- read.csv(url('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/standardised_rate_by_LA_25may2022.csv'))
 la_rate <- la_rate[is.na(la_rate$period),]
 
+#  ===
+#  map
+#  ---
+
 # from https://geoportal.statistics.gov.uk/datasets/ons::local-authority-districts-december-2017-boundaries-gb-buc/about
 tract <- readOGR('Local_Authority_Districts__December_2017__Boundaries_GB_BUC.shp')
 
@@ -35,6 +39,7 @@ setDT(la_rate)
 
 head(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')], 10)
 
+> head(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50.')], 10)
 #                     GOR_NAME                   LA09_NAME       sr    X2.5.   X97.5.
 # 1:               North East                  Hartlepool 907.0401 847.8065 970.1319
 # 2:               North West                   Blackpool 766.4197 722.5797 809.4041
@@ -60,3 +65,33 @@ tail(la_rate[order(sr, decreasing = T), -c('LAD10CD', 'RESLADST', 'period', 'X50
 # 8:          London               Merton 22.66736 17.183979 28.91213
 # 9:          London              Enfield 22.20139 17.441375 27.88017
 # 10: East of England            Braintree 20.28892 11.823847 29.97468
+
+#  =======
+#  barplot
+#  -------
+
+setDT(la_rate)
+key <- data.table(GOR_NAME = c('East of England', 'London', 'South East', 'West Midlands', 'East Midlands', 'South West', 'North West', 'Yorkshire and The Humber', 'North East'))
+key[, cl := brewer.pal(.N, 'Spectral')]
+key[, cl := colorRampPalette(c('white', 'lightblue', 'orange', 'red', 'black'))(.N)]
+
+la_rate <- key[la_rate, on = 'GOR_NAME']
+la_rate <- la_rate[order(sr)]
+la_rate[, y := .I]
+ys <- seq(110, 184, length.out = nrow(key) + 1)
+
+emf('la_barplot_27may2022.emf', height = 12, width = 8, family = 'Franklin Gothic Book')
+
+par(mar = c(4, 3, 0, 0))
+plot(1, type = 'n', xlim = c(0, 1000), ylim = c(0, 294), axes = F, xlab = NA, ylab = NA)
+with(la_rate, {
+  rect(0, y-1, sr, y, col = cl, lwd = 0.5)
+  arrows(X2.5., y-0.5, X97.5., y-0.5, length = 0, code = 3, angle = 90, lwd = 0.5)
+})
+axis(1, 0:5 * 200, pos = 0)
+rect(600, ys[-length(ys)], 640, ys[-1], col = key$cl)
+text(650, ys[-length(ys)] + diff(ys)/2, key$GOR_NAME, adj = 0)
+title(xlab = 'Opiate injection-related infections per million,\nStandardised by age and year')
+title(ylab = 'Local authority districts', line = 1)
+
+dev.off()
