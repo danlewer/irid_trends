@@ -43,8 +43,7 @@ icd10 <- list(
 # read patient-level HES data
 # ---------------------------
 
-d_raw <- fread("irid_hes_extract_24may2022.csv")
-
+d_raw <- fread("irid_hes_extract_12oct2022.csv")
 d <- copy(d_raw)
 
 # ================
@@ -53,7 +52,7 @@ d <- copy(d_raw)
 
 # age, sex, ethnicity
 d[, STARTAGE := as.integer(STARTAGE)]
-age_lims <- c(15, 25, 34, 44, 54)
+age_lims <- c(15, 25, 35, 45, 54)
 d[, age_group := findInterval(STARTAGE, age_lims)]
 d[, age_group := factor(age_group, seq_along(age_lims), age_lims)]
 d[, SEX := factor(SEX, c(1, 2, 9, 0), c('male', 'female or not known', 'female or not known', 'female or not known'))]
@@ -149,6 +148,45 @@ nrow(d) # 92303
 
 d <- droplevels(d)
 
+# =================
+# check seasonality
+# -----------------
+
+d[, month := month(ADMIDATE, label = T)]
+season <- d[year >= 2012, .N, c('month', 'year')]
+season[, month := factor(as.character(month), month.abb)]
+season[, covid := year >= 2020]
+season$covid[season$month %in% c('Jan', 'Feb') & season$year == 2020] <- F
+season <- season[order(year, month)]
+season[, x := .I]
+season_model <- glm(N ~ month + x + covid, data = season, family = 'poisson')
+season_model2 <- glm(N ~  x + covid, data = season, family = 'poisson')
+season[, p := predict(season_model, newdata = season, type = 'response')]
+season[, p2 := predict(season_model2, newdata = season, type = 'response')]
+season[, r1 := p - N]
+season[, r2 := p2 - N]
+
+plot(season$x, season$N, ylim = c(0, max(season$N)))
+lines(season$x, season$p)
+lines(season$x, season$p2)
+
+av_month <- season[, mean(N), month]
+plot(1, type = 'n', xlim = c(0, 12), ylim = c(0, max(av_month$V1)), axes = F, xlab = NA, ylab = NA)
+with(av_month, rect(0:11, 0, 1:12, V1))
+axis(1, 0:11 + 0.5, av_month$month, las = 2, pos = 0, tick = F)
+axis(2, pos = 0, las = 2)
+
+# ===================
+# detailed age groups
+# -------------------
+
+age_lims2 <- c(0, 18, seq(20, 70, 5))
+d[, age_group2 := findInterval(STARTAGE, age_lims2)]
+d[, age_group2 := factor(age_group2, seq_along(age_lims2), age_lims2)]
+detailed_age_groups <- d[, .N, c('year', 'age_group2')]
+detailed_age_groups[, N := pmax(N, 10)]
+fwrite(detailed_age_groups, 'irid_age_group_by_year_12oct2022.csv')
+
 # =========================================
 # check reduction in March 2020 by pt group
 # -----------------------------------------
@@ -173,7 +211,7 @@ lapply(names(abg)[-1], function (x) {
 # age histogram
 
 age_hist <- d[, .(n = pmax(10, .N)), STARTAGE][order(STARTAGE)]
-fwrite(age_hist, 'age_histogram_25may2022.csv')
+fwrite(age_hist, 'age_histogram_12oct2022.csv')
 
 cv <- function (v) {
   a <- d[, table(get(v))]
@@ -208,7 +246,7 @@ table1 <- rbind(cv('total'),
                 cv('diagnosis'),
                 cv('period'))
 
-fwrite(table1, 'table1_25may2022.csv')
+fwrite(table1[,1:3], 'table1_12oct2022.csv')
 
 # =============
 # age quantiles
@@ -219,7 +257,7 @@ age_quantiles <- rbind(aggregate(d$STARTAGE, by = list(region = d$region, year =
 age_quantiles <- data.table(age_quantiles)
 age_quantiles <- age_quantiles[year %in% 1998:2021]
 names(age_quantiles) <- c('region', 'year', 'q0.05', 'q0.25', 'q0.5', 'q0.75', 'q0.95')
-fwrite(age_quantiles, 'age_quantiles_25may2022.csv')
+fwrite(age_quantiles, 'age_quantiles_12oct2022.csv')
 
 # ===========
 # time trends
@@ -228,7 +266,128 @@ fwrite(age_quantiles, 'age_quantiles_25may2022.csv')
 yrAge <- d[year >= 1998 & year <= 2021, .(admissions = .N), c('year', 'age_group')]
 # redact small cells (very few of these)
 yrAge[, admissions := pmax(10, admissions)]
-fwrite(yrAge, 'admissions_by_year_and_age_group_25may2022.csv')
+fwrite(yrAge, 'admissions_by_year_and_age_group_12oct2022.csv')
+
+# ==================================
+# severity before and after COVID-19
+# ----------------------------------
+
+d[, dur := as.integer(DISDATE - ADMIDATE)]
+d$dur[d$dur < 0] <- NA_integer_
+covidStart <- as.Date('2020-03-23', origin = '1970-01-01')
+d[, covid1 := 'before']
+d$covid1[as.integer(d$ADMIDATE) %between%  c(covidStart, covidStart + 364)] <- 'after'
+d$covid1[as.integer(d$ADMIDATE) < (covidStart - 365) | as.integer(d$ADMIDATE) > (covidStart + 364)] <- NA_character_
+
+d[, .(mn = mean(dur, na.rm = T), sd = sd(dur, na.rm = T)), c('covid1', 'diagnosis')]
+d <- droplevels(d)
+
+durs <- dcast(d[!is.na(covid1)], diagnosis ~ covid1, value.var = 'dur', fun.aggregate = cbind(mean, sd), na.rm = T)
+
+ttests <- sapply(split(d[!is.na(covid1)], f = d$diagnosis[!is.na(d$covid1)]), function (x) with(x, t.test(dur ~ covid1)$p.value))
+mwut <- sapply(split(d[!is.na(covid1)], f = d$diagnosis[!is.na(d$covid1)]), function (x) with(x, wilcox.test(dur ~ covid1)$p.value))
+
+
+durs <- data.table(diagnosis = names(ttests), ttests = ttests)[durs, on = 'diagnosis']
+durs <- data.table(diagnosis = names(mwut), mwut = mwut)[durs, on = 'diagnosis']
+setnames(durs, c('dur_fun1_before', 'dur_fun1_after', 'dur_fun2_before', 'dur_fun2_after'), c('mn_before', 'mn_after', 'sd_before', 'sd_after'))
+durs[, c('mn_before', 'mn_after', 'sd_before', 'sd_after') := lapply(.SD, function (x) format(round(x, 2), digits = 2, nsmall = 2)), .SDcols = c('mn_before', 'mn_after', 'sd_before', 'sd_after')]
+durs[, before := paste0(mn_before, '(', sd_before, ')')]
+durs[, before := gsub(' ', '', before)]
+durs[, before := gsub('\\(', ' (', before)]
+durs[, after := paste0(mn_after, '(', sd_after, ')')]
+durs[, after := gsub(' ', '', after)]
+durs[, after := gsub('\\(', ' (', after)]
+durs[, pvalue := ifelse(mwut < 0.001, '<0.001', format(round(mwut, 3), digits = 3, nsmall = 3))]
+
+dur_counts <- dcast(d[!is.na(covid1)], diagnosis ~ covid1, value.var = 'adID', fun.aggregate = length)
+setnames(dur_counts, c('before', 'after'), c('n_before', 'n_after'))
+durs <- dur_counts[durs, on = 'diagnosis']
+durs <- durs[, c('diagnosis', 'n_before', 'n_after', 'before', 'after', 'pvalue')]
+fwrite(durs, 'los_before_after_covid_14oct2022.csv')
+
+# =======================
+# seasonal trends in IRID
+# -----------------------
+
+d[, mth := month(ADMIDATE, label = T)]
+d[, mth := as.character(mth)]  # otherwise it's ordered
+d[, mth := factor(mth, month.abb)]
+
+dx <- d[, unique(as.character(diagnosis))]
+
+seasonalIRID <- dcast(d, year + mth ~ diagnosis, value.var = 'TOKEN_PERSON_ID', fun.aggregate = length)
+seasonalIRID <- seasonalIRID[order(year, mth)]
+seasonalIRID[, irid := rowSums(seasonalIRID[, dx, with = F])]
+
+#  =====================================
+#  comparison trends in other infections
+#  -------------------------------------
+
+nt_names <- list(all_staph = 'emergency_admissions_all_staph_12oct2022.csv',
+                 skin_staph = 'emergency_admissions_skin_staph_12oct2022.csv',
+                 all_strep = 'emergency_admissions_all_strep_12oct2022.csv',
+                 skin_strep = 'emergency_admissions_skin_strep_12oct2022.csv',
+                 tcodes = 'emergency_admissions_tcodes_12oct2022.csv',
+                 f11 = 'emergency_admissions_f11_12oct2022.csv')
+nt <- lapply(nt_names, fread)
+nt <- lapply(nt, `names<-`, c('ADMIDATE', 'admissions'))
+nt <- lapply(nt, function (x) {
+  x$d <- format_date(x$ADMIDATE)
+  x$year <- year(x$d)
+  x$mth <- month(x$d)
+  x[!is.na(d), .(a = pmax(10, sum(admissions))), c('year', 'mth')]
+})
+for (i in seq_along(nt)) {
+  names(nt[[i]])[3] <- names(nt_names)[i]
+}
+nt <- Reduce(function(...) merge(..., all = TRUE), nt)
+nt <- nt[year >= 2012 & year <= 2021]
+# calculate non-skin straph and strep
+nt[, other_staph := all_staph - skin_staph]
+nt[, other_strep := all_strep - skin_strep]
+nt[, mth := factor(mth, 1:12, month.abb)]
+
+#  ===================
+#  drug-related deaths
+#  -------------------
+
+ons <- fread("H:/irid_time_trends_HES_2022/ons_daily_drd.csv")
+ons[, date := dmy(date)]
+ons[, year := year(date)]
+ons <- ons[year >= 2012]
+ons[, opioid := as.integer(opioid)]
+ons[, mth := month(date)]
+ons[, mth := factor(mth, 1:12, month.abb)]
+
+# impute opioid values
+
+ons <- ons[!is.na(opioid), .(prop_opioid = sum(opioid) / sum(all)), year][ons, on = 'year']
+ons[, opioid2 := fifelse(is.na(opioid), round(prop_opioid * all, 0), opioid)]
+ons <- ons[, .(all_drd = sum(all), opioid_drd = sum(opioid2)), c('year', 'mth')]
+ons[, non_opioid_drd := all_drd - opioid_drd]
+
+#  ====
+#  join
+#  ----
+
+ss <- seasonalIRID[nt, on = c('year', 'mth')]
+ss <- ons[ss, on = c('year', 'mth')]
+
+#  ==========
+#  add labels
+#  ----------
+
+ss[, time := .I]
+covidMth <- ss[year == 2020 & mth == 'Mar', time]
+ss[, covid := time >= covidMth]
+ss[, sstvi := abscess + cellulitis + other_ssti + phlebitis]
+ss[, invasive := endocarditis + septicaemia + osteo]
+
+# write
+
+ss[, c('osteo', 'septicaemia', 'endocarditis') := NULL]
+fwrite(ss, 'counts_per_month_14oct2022.csv')
 
 # ======================
 # local authority counts
@@ -308,76 +467,4 @@ simSR <- rbind(la_count[, .(sr = sum(e) / sum(refpop) * 1000000), c('period', 'L
                la_count[, .(sr = sum(e) / sum(refpop) * 1000000), 'LAD10CD'], fill = T)[simSR, on = c('period', 'LAD10CD')]
 simSR <- la_lookup[simSR, on = 'LAD10CD']
 
-fwrite(simSR, 'standardised_rate_by_LA_25may2022.csv')
-
-# =================
-# estimate of costs
-# -----------------
-
-sensitivity <- 0.528 # proportion of admissions captured
-yr_diag <- d[, .N, c('year', 'diagnosis', 'region')]
-yr_diag[, scaledN := round(N / sensitivity, 0)]
-cost_per_admission <- data.table(diagnosis = c('abscess', 'cellulitis', 'phlebitis', 'septicaemia', 'osteo', 'endocarditis', 'other_ssti'),
-                                 cost = c(4307, 3579, 3261, 8687, 14134, 12963, 4980))
-yr_diag <- cost_per_admission[yr_diag, on = 'diagnosis']
-yr_diag[, cost2 := scaledN * cost]
-yr_diag[region == 'London', sum(scaledN), year][order(year)] # slightly lower than 2011 estimate based on rate of hospitalisation in SLAM cohort
-yr_diag[year %in% 1998:2021, .(total_cost = sum(cost2)), year][order(year)]
-
-# year total_cost
-# 1: 2002   31731412
-# 2: 2003   42241397
-# 3: 2004   39658946
-# 4: 2005   35445807
-# 5: 2006   35308171
-# 6: 2007   33912071
-# 7: 2008   34842453
-# 8: 2009   30799484
-# 9: 2010   31448206
-# 10: 2011   28074978
-# 11: 2012   29938317
-# 12: 2013   34260933
-# 13: 2014   40928177
-# 14: 2015   47651939
-# 15: 2016   55633435
-# 16: 2017   63769101
-# 17: 2018   69218413
-# 18: 2019   69123223
-# 19: 2020   51162972
-# 20: 2021   45760018
-
-#  ========
-#  COVID-19
-#  --------
-
-covid19 <- d[year > 2017 & year < 2022, .N, admiMonth]
-fwrite(covid19, 'monthly_from_jan2018_25may2022.csv')
-
-#  =============================================
-#  national trends for other types of admissions
-#  ---------------------------------------------
-
-nt <- fread('emergency_admissions_per_month_25may2022.csv')
-nt[, dt := ymd(paste(AdmiMonth, '-01'))]
-nt <- nt[year(dt) >= 2018]
-nt[, AdmiMonth := paste0( month(dt, label = T), ' ', year(dt))]
-nt[, AdmiMonth := factor(AdmiMonth, c(outer(month.abb, paste0(' ', 2018:2022), paste0)))]
-
-abm <- list(
-  nt[, .(all_cause = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 == 'F10', .(alcohol = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 %in% setdiff(paste0('F', 10:19), c('F10', 'F17')), .(drugs = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 == 'J45', .(asthma = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 %in% c('K35', 'K36', 'K37', 'K38'), .(appendix = sum(admissions)), AdmiMonth],
-  nt[stri_sub(DIAG3_01, 0, 1) %in% c('A', 'B'), .(infections = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 %in% paste0('J', stri_pad(0:22, width = 2, pad = '0')), .(resp_infections = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 %in% paste0('A', stri_pad(0:9, width = 2, pad = '0')), .(intestinal_infections = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 %in% paste0('A', 15:19), .(tb = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 %in% c('E10', 'E11', 'E12', 'E13', 'E14'), .(diabetes = sum(admissions)), AdmiMonth],
-  nt[DIAG3_01 == 'U07', .(covid = sum(admissions)), AdmiMonth]
-)
-abm <- Reduce(function(...) merge(..., all = TRUE), abm)
-abm <- abm[order(AdmiMonth)]
-abm <- cbind(AdmiMonth = abm$AdmiMonth, abm[, lapply(.SD, pmax.int, y = 10)][, -1])
-
-fwrite(abm, 'monthly_trends_other_causes_25may2022.csv')
+fwrite(simSR, 'standardised_rate_by_LA_14oct2022.csv')
