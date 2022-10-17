@@ -6,26 +6,27 @@ WHERE (diag.DiagCode4 LIKE 'L02%'    /* Abscess */
     OR diag.DiagCode4 LIKE 'L03%' /* Cellulitis */
 	OR diag.DiagCode4 LIKE 'I80%' /* Phlebitis & thrombophlebitis */
 	OR diag.DiagCode4 = 'A480' /* Other SSTI */
-	OR diag.DiagCode4 = 'L088'
-	OR diag.DiagCode4 = 'L089'
+	OR diag.DiagCode4 = 'L08'
 	OR diag.DiagCode4 LIKE 'L97%'
 	OR diag.DiagCode4 = 'L984'
 	OR diag.DiagCode4 = 'L988'
 	OR diag.DiagCode4 = 'L989'
 	OR diag.DiagCode4 LIKE 'R02%'
 	OR diag.DiagCode4 = 'B376' /* Endocarditis */
-	OR diag.DiagCode4 = 'I330'
-	OR diag.DiagCode4 = 'I339'
+	OR diag.DiagCode4 = 'I33'
 	OR diag.DiagCode4 LIKE 'I38%'
 	OR diag.DiagCode4 LIKE 'I39%'
 	OR diag.DiagCode4 LIKE 'A40%' /* Septicaemia */
 	OR diag.DiagCode4 LIKE 'A41%'
 	OR diag.DiagCode4 = 'R572'
 	OR diag.DiagCode4 = 'B377'
-	OR diag.DiagCode4 LIKE 'M86%' /* Osteomyelitis & septic arthritis */
-	OR diag.DiagCode4 LIKE 'M00%'
+	OR diag.DiagCode4 LIKE 'M00%' /* Osteomyelitis & septic arthritis */
+	OR diag.DiagCode4 LIKE 'M01%' 
+	OR diag.DiagCode4 LIKE 'M02%' 
+	OR diag.DiagCode4 LIKE 'M03%' 
+	OR diag.DiagCode4 LIKE 'M86%' 
 	OR diag.DiagCode4 = 'M465'
-	OR diag.DiagCode4 = 'M762' /* Necrotising fasciitis */
+	OR diag.DiagCode4 = 'M726' /* Necrotising fasciitis */
 	)
 AND diag.DiagIdx = 1
 AND main.EPIKEY IN (SELECT diag1.EPIKEY
