@@ -6,14 +6,12 @@ WHERE (diag.DiagCode4 LIKE 'L02%'    /* Abscess */
     OR diag.DiagCode4 LIKE 'L03%' /* Cellulitis */
 	OR diag.DiagCode4 LIKE 'I80%' /* Phlebitis & thrombophlebitis */
 	OR diag.DiagCode4 = 'A480' /* Other SSTI */
-	OR diag.DiagCode4 = 'L08'
+	OR diag.DiagCode4 = 'L08%'
 	OR diag.DiagCode4 LIKE 'L97%'
 	OR diag.DiagCode4 = 'L984'
-	OR diag.DiagCode4 = 'L988'
-	OR diag.DiagCode4 = 'L989'
 	OR diag.DiagCode4 LIKE 'R02%'
 	OR diag.DiagCode4 = 'B376' /* Endocarditis */
-	OR diag.DiagCode4 = 'I33'
+	OR diag.DiagCode4 = 'I33%'
 	OR diag.DiagCode4 LIKE 'I38%'
 	OR diag.DiagCode4 LIKE 'I39%'
 	OR diag.DiagCode4 LIKE 'A40%' /* Septicaemia */
