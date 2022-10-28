@@ -188,7 +188,7 @@ ss <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary
 # titles <- c('All IRID', 'SSTVI', 'Invasive infections', 'Staphylocccal (skin)', 'Staphylococcal (other)', 'Streptococcal (skin)', 'Streptococcal (other)', 'Opioid-related (F11)', 'Opioid poisoning (T codes)')
 
 dx <- c('irid', 'cocci', 'tcodes')
-titles <- c('A: Opioid-injection\nrelated infections', 'B: Non-opioid-related\nskin infections', 'C: Opioid poisoning')
+titles <- c('A: Opioid-injection associated infections', 'B: Other skin infections', 'C: Opioid poisoning')
 
 sf <- function (var = 'abscess', data = ss, pol = 3) {
   f1 <- as.formula(paste0(var, '~poly(time, ', pol, ')+mth+covid'))
@@ -266,27 +266,33 @@ dev.off()
 
 ts_vals <- lapply(irid_season, function (x) x[[3]])
 names(ts_vals) <- dx
-ymax <- sapply(ts_vals, max, na.rm = T) * 1.4
+ymax <- sapply(ts_vals, max, na.rm = T) * 1.1
 
 jan_lines <- ss[mth == 'Jan', time]
 cov_line <- ss[mth == 'Mar' & year == 2020, time]
+red2 <- brewer.pal(3, 'Set1')[1]
+
 
 #emf('time_series_plot_17oct2022.emf', height = 3, width = 7, family = 'Franklin Gothic Book')
-png('time_series_plot_17oct2022.png', height = 3, width = 7, res = 300, units = 'in', family = 'Franklin Gothic Book')
+png('Figure2.png', height = 3, width = 7, res = 600, units = 'in', family = 'Franklin Gothic Book')
 
-par(mar = c(0, 3, 0, 0), oma = c(5, 2, 0, 0), mfrow = c(1, 3))
+par(mar = c(0, 3, 0, 0), oma = c(5, 3, 2, 0), mfrow = c(1, 3), xpd = NA)
 
 for (i in seq_along(dx)) {
   plot(1, type = 'n', ylim = c(0, ymax[i]), xlim = c(1, 120), xlab = NA, ylab = NA, axes = F)
   rect(1, 0, 120, ymax[i])
-  segments(cov_line, 0, y1 = ymax[i] * 0.85, col = 'red')
-  segments(jan_lines, 0, y1 = ymax[i] * 0.85, lty = 3)
-  segments(0, ymax[i] * 0.85, x1 = 120)
-  points(ss[, time], ss[, get(dx[i])], cex = 0.6)
-  lines(seq_along(ts_vals[[i]]), ts_vals[[i]])
+  segments(cov_line, 0, y1 = ymax[i], col = red2, lwd = 0.8)
+  segments(jan_lines, 0, y1 = ymax[i], col = 'grey50', lwd = 0.5)
+  #segments(0, ymax[i] * 0.85, x1 = 120)
+  points(ss[, time], ss[, get(dx[i])], cex = 0.6, lwd = 0.5)
+  lines(seq_along(ts_vals[[i]]), ts_vals[[i]], lwd = 0.7)
   axis(2, pos = 1, yax(ymax[i], ntick = 6), las = 2)
-  text(10, ymax[i] * 0.97, titles[i], adj = c(0, 1))
-  axis(1, jan_lines, paste0('Jan ', 2012:2021), las = 2, pos = 0)
+  text(1, ymax[i] * 1.05, titles[i], adj = c(0, 0))
+  axis(1, c(jan_lines, 120), labels = F, pos = 0)
+  text(jan_lines + 6, ymax[i] * -0.19, 2012:2021, adj = 0, srt = 90)
 }
+
+mtext('Number of emergency hospital\nadmissions in England', side = 2, outer = T, cex = 0.7, line = 1)
+mtext('Date of admission (tick mark = January)', side = 1, outer = T, cex = 0.7, line = 3.5)
 
 dev.off()
