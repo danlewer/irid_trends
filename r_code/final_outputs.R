@@ -1,6 +1,5 @@
 library(data.table)
 library(RColorBrewer)
-library(viridisLite)
 library(devEMF)
 library(extrafont)
 loadfonts(device = "win")
@@ -96,7 +95,8 @@ hln[, total := yes + no]
 hln <- cbind(hln, vpt(x = hln$yes, t = hln$total, cn = c('prop', 'lower', 'upper')))
 
 #emf('Figure1.emf', height = 9, width = 4, family = 'Franklin Gothic Book')
-png('Figure1_14nov2022.png', height = 9, width = 9, family = 'Tahoma', res = 300, units = 'in')
+#png('Figure1_18nov2022.png', height = 9, width = 9, family = 'Tahoma', res = 300, units = 'in')
+cairo_pdf('Figure1_21nov2022.pdf', height = 9, width = 9, family = 'Tahoma')
 
 par(mar = c(3, 5, 4, 5), xpd = NA, mfrow = c(2, 2))
 xl <- seq(2005, 2020, 5)
@@ -120,7 +120,7 @@ with(avd, {
   points(year, ad_rt, col = cols[4], pch = 19)
 })
 
-text(2002, 20 * 1.1, 'A: Hospital admissions due to injection-associated\ninfections, compared to deaths due to drug poisoning', adj = 0)
+text(2002, 20 * 1.1, 'A: Hospital admissions due to injection-associated\ninfections, compared to deaths due to drug poisoning', adj = 0, cex = 1.05)
 title(ylab = 'Rate per day')
 
 ys <- c(8.5, 11.5)
@@ -139,7 +139,7 @@ ys <- seq(5, 15, length.out = 6)
 rect(2023, ys[-1], 2024, ys[-length(ys)], col = cols2)
 text(2024.5, ys[-length(ys)] + diff(ys)/2, c('15-24', '25-34', '35-44', '45-54', '55-64'), adj = 0)
 text(2023, max(ys) + max(ys)/10, 'Age at\nadmission', adj = 0)
-text(2002, 20 * 1.1, 'B: Hospital admissions due to injection-associated\ninfections, by age at admission', adj = 0)
+text(2002, 20 * 1.1, 'B: Hospital admissions due to injection-associated\ninfections, by age at admission', adj = 0, cex = 1.05)
 title(ylab = 'Rate per day')
 
 # distribution of age
@@ -165,7 +165,7 @@ rect(2023.5 - gap, ys[2], 2023.5 + gap, ys[4], col = col)
 segments(x0 = 2023.5 - gap, y0 = ys[3], x1 = 2023.5 + gap)
 text(2023.5 + gap + 0.5, ys, c(0.05, 0.25, 0.5, 0.75, 0.95), adj = 0)
 text(2023.5, max(ys) + max(ys)/10, 'Quantile\nof age', adj = 0)
-text(2002, 60 + 40 * 0.1, 'C: Distribution of age at hospital admission\ndue to injection-associated infections', adj = 0)
+text(2002, 60 + 40 * 0.1, 'C: Distribution of age at hospital admission\ndue to injection-associated infections', adj = 0, cex = 1.05)
 title(ylab = 'Age at admission')
 
 # homelessness
@@ -182,7 +182,7 @@ with(hln, {
   lines(year, prop, col = cols[2])
   points(year, prop, col = cols[2], pch = 19)
 })
-text(2002, 0.2 * 1.1, 'D: Admissions due to injection-associated\ninfections where homelessness is coded', adj = 0)
+text(2002, 0.2 * 1.1, 'D: Admissions due to injection-associated\ninfections where homelessness is coded', adj = 0, cex = 1.05)
 title(ylab = 'Proportion of admissions')
 
 dev.off()
