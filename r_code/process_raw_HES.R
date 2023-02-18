@@ -8,11 +8,9 @@ setwd("Z:/IA_UserData/dan.lewer/pwid_bacterial_infections/update_2022")
 # load libraries
 library(data.table)
 library(lubridate) # for date formatting
-library(stringi) # for sting processing
 library(RColorBrewer) # more color palettes
 library(extrafont) # for fonts in charts
 library(tsModel) # for 'harmonic'
-library(devEMF) # for enhanced metafile device (vector graphics)
 
 # function for setting y-axis tick marks
 yax <- function(x, tickabove = F, ntick = 5) {
@@ -427,7 +425,7 @@ for(i in seq_along(nt)) {
 nt <- Reduce(function(...) merge(..., all = TRUE), nt)
 nt <- nt[year(ADMIDATE) %between% c(2002, 2022)]
 all_days <- data.table(ADMIDATE = seq(from = as.Date('2002-01-01', origin = '1970-01-01'), 
-                                      to = as.Date('2021-12-31', origin = '1970-01-01'),
+                                      to = as.Date('2022-12-31', origin = '1970-01-01'),
                                       by = 'day'))
 nt <- nt[all_days, on = 'ADMIDATE']
 
@@ -520,9 +518,10 @@ covid_day <- nt[ADMIDATE == '2020-03-23', time]
 pf2 <- function (x, title = NA, counter = T, deseason = T, timestart = 4749, ci = F) {
   jan2 <- nt[time >= timestart & yd == 1, time]
   ymax <- max(nt[time >= timestart, get(x)]) * 1.05
-  plot(1, type = 'n', xlim = c(timestart, 7306), ylim = c(0, ymax), axes = F, xlab = NA, ylab = NA)
+  xmax <- nt[, max(time)] + 1
+  plot(1, type = 'n', xlim = c(timestart, xmax), ylim = c(0, ymax), axes = F, xlab = NA, ylab = NA)
   segments(jan2, 0, y1 = ymax, lwd = 0.3, col = 'grey70')
-  rect(timestart, 0, 7306, ymax)
+  rect(timestart, 0, xmax, ymax)
   points(nt[time >= timestart, time], nt[time >= timestart, get(x)], pch = 4, cex = 0.6, col = 'grey80')
   if (deseason) {
     with(sr[[x]]$des, {
@@ -541,8 +540,8 @@ pf2 <- function (x, title = NA, counter = T, deseason = T, timestart = 4749, ci 
   segments(covid_day, 0, y1 = ymax, lwd = 0.8, col = 'red', lty = 3)
   axis(2, at = yax(ymax), las = 2, pos = timestart)
   xtick <- unique(c(timestart, jan2))
-  axis(1, at = c(xtick, 7306), labels = F, pos = 0)
-  text(jan2 + diff(c(xtick, 7306) / 2), ymax * -0.05, nt[time >= timestart & yd == 1, year], srt = 60, adj = 1)
+  axis(1, at = c(xtick, xmax), labels = F, pos = 0)
+  text(jan2 + diff(c(xtick, xmax) / 2), ymax * -0.05, nt[time >= timestart & yd == 1, year], srt = 60, adj = 1)
   text(timestart, ymax * 1.1, title, cex = 1.05, adj = 0)
 }
 
@@ -594,57 +593,3 @@ for(i in seq_along(season_res)) {
   season_res[[i]] <- cbind(outcome = rep(names(season_res)[i], 3), season_res[[i]])
 }
 fwrite(season_res, 'ratio_summary_10nov2022.csv')
-
-#  =================
-#  focus on lockdown
-#  -----------------
-
-days <- data.table(ADMIDATE = seq(from = as.Date('2002-01-01', origin = '1970-01-01'), to = as.Date('2021-12-31', origin = '1970-01-01'), by = 'day'))
-days[, year := year(ADMIDATE)]
-days[, wd := weekdays(ADMIDATE)]
-days[, wk := cumsum(wd == 'Monday'), year]
-nt <- days[nt, on = c('ADMIDATE', 'year')]
-
-# by week
-
-ld <- dcast(nt[year %in% 2019:2021 & wk %in% 1:30], wk ~ year, value.var = 'irid', fun.aggregate = sum)
-
-cols <- brewer.pal(3, 'Set1')
-
-lineBg <- function (x, y, ...) {
-  lines(x = x, y = y, col = 'white', lwd = 5)
-  lines(x = x, y = y, ...)
-}
-
-plot(1, type = 'n', xlim = c(1, 30), ylim = c(0, 170), axes = F, xlab = NA, ylab = NA)
-axis(1, 1:30, pos = 0, labels = F, tck = -0.005)
-axis(1, 1:6 * 5, pos = 0)
-axis(2, 0:17 * 10, pos = 1, las = 2)
-segments(12, 0, y1 = 170, lty = 3)
-#mapply(lines, x = list(ld$wk), y = ld[, -1], col = 'white', lwd = 5)
-mapply(lineBg, x = list(ld$wk), y = ld[, -1], col = cols, lty = c(3, 1, 3))
-mapply(points, x = list(ld$wk), y = ld[, -1], pch = 19, col = cols)
-text(30.5, unlist(ld[wk == 30, -1]), c(2019:2021), col = cols, adj= 0)
-
-# by month
-
-days[, month := month(ADMIDATE)]
-month_values <- nt[, .(irid = sum(irid)), c('year', 'month')]
-month_values <-days[, .N, c('year', 'month')][month_values, on = c('year', 'month')]
-month_values <- cbind(month_values, `colnames<-`(t(vpt(x = month_values$irid, t = month_values$N)), c('rate', 'lower', 'upper')))
-
-ld <- dcast(nt[year %in% 2019:2021], month ~ year, value.var = 'irid', fun.aggregate = sum)
-
-plot(1, type = 'n', xlim = c(1, 12), ylim = c(0, 700), axes = F, xlab = NA, ylab = NA)
-axis(1, 1:12, month.abb, pos = 0)
-axis(2, 0:7 * 100, pos = 1, las = 2)
-#mapply(lines, x = list(ld$wk), y = ld[, -1], col = 'white', lwd = 5)
-mapply(lineBg, x = list(ld$month), y = ld[, -1], col = cols, lty = c(3, 1, 3))
-mapply(points, x = list(ld$month), y = ld[, -1], pch = 19, col = cols)
-text(30.5, unlist(ld[month == 12, -1]), c(2019:2021), col = cols, adj= 0)
-
-# fitted rate in April 2020
-
-april2020 <- sr$irid$fit[sr$irid$des$time %in% nt[year == 2020 & month == 4, time], ]
-
-sr$irid$fit[sr$irid$des$time %in% nt[year == 2020 & month == 5, time], ][15,]
