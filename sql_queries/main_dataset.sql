@@ -1,4 +1,4 @@
-SELECT main.EPIKEY, main.FYEAR, main.TOKEN_PERSON_ID, diag.DiagCode4, main.CLASSPAT, main.EPISTAT, main.EPIORDER, main.STARTAGE, main.SEX, main.ETHNOS, main.ADMIDATE, main.ADMIMETH, main.DISDATE, main.DISMETH, main.RESGOR, main.RESGOR_ONS, main.RESLADST, main.IMD04RK, main.LSOA11
+SELECT main.EPIKEY, main.FYEAR, main.TOKEN_PERSON_ID, diag.DiagCode4, main.CLASSPAT, main.EPISTAT, main.EPIORDER, main.STARTAGE, main.SEX, main.ETHNOS, main.ADMIDATE, main.ADMIMETH, main.DISDATE, main.DISMETH, main.RESGOR, main.RESGOR_ONS, main.RESLADST, main.IMD04RK, main.LSOA11, main.OPERSTAT
 FROM HES_APC.dbo.[vtHES_APC] AS main
 INNER JOIN HES_APC.dbo.[vtHES_APC_DIAG] AS diag
 ON main.EPIKEY = diag.EPIKEY
