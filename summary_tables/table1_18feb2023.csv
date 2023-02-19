@@ -1,0 +1,55 @@
+variable,level,val
+total2,total,"96,574 (100.0)"
+age_group,35,"40,399 (41.8)"
+age_group,15,"4,938 (5.1)"
+age_group,25,"33,036 (34.2)"
+age_group,45,"15,558 (16.1)"
+age_group,55,"2,642 (2.7)"
+age_group,,1 (0.0)
+STARTAGE,Median [IQR],37 [31-43]
+STARTAGE,Mean [sd],37.2 [8.3]
+SEX,male,"69,456 (71.9)"
+SEX,female or not known,"27,118 (28.1)"
+ETHNOS,White,"89,797 (93.0)"
+ETHNOS,Other or unknown,"4,175 (4.3)"
+ETHNOS,Black,900 (0.9)
+ETHNOS,Asian,751 (0.8)
+ETHNOS,Mixed,951 (1.0)
+imd5,1 - most deprived,"55,036 (57.0)"
+imd5,missing,"1,168 (1.2)"
+imd5,4,"5,578 (5.8)"
+imd5,2,"21,435 (22.2)"
+imd5,5 - least deprived,"2,858 (3.0)"
+imd5,3,"10,499 (10.9)"
+homeless,FALSE,"88,498 (91.6)"
+homeless,TRUE,"8,076 (8.4)"
+region,North East,"7,144 (7.4)"
+region,Yorkshire & Humber,"17,894 (18.5)"
+region,West Midlands,"8,071 (8.4)"
+region,Unknown,"2,139 (2.2)"
+region,No fixed abode,"5,225 (5.4)"
+region,North West,"20,244 (21.0)"
+region,South West,"9,068 (9.4)"
+region,East Midlands,"7,391 (7.7)"
+region,South East,"7,311 (7.6)"
+region,East of England,"4,686 (4.9)"
+region,London,"7,401 (7.7)"
+finalDis,normal,"76,780 (79.5)"
+finalDis,other,"3,265 (3.4)"
+finalDis,DAMA,"15,720 (16.3)"
+finalDis,died,793 (0.8)
+finalDis,,16 (0.0)
+diagnosis,phlebitis,"22,458 (23.3)"
+diagnosis,endocarditis,"2,270 (2.4)"
+diagnosis,abscess,"30,880 (32.0)"
+diagnosis,cellulitis,"21,093 (21.8)"
+diagnosis,septicaemia,"6,498 (6.7)"
+diagnosis,osteo,"4,165 (4.3)"
+diagnosis,other_ssti,"8,912 (9.2)"
+diagnosis,nf,298 (0.3)
+dur,Median [IQR],3 [1-5]
+dur,Mean [sd],4.8 [6.9]
+operat,FALSE,"63,616 (65.9)"
+operat,TRUE,"32,958 (34.1)"
+read,TRUE,"18,131 (18.8)"
+read,FALSE,"78,443 (81.2)"
