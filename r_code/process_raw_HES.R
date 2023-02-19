@@ -11,6 +11,7 @@ library(lubridate) # for date formatting
 library(RColorBrewer) # more color palettes
 library(extrafont) # for fonts in charts
 library(tsModel) # for 'harmonic'
+library(devEMF) # for enhanced metafile graphic device (vector graphics)
 
 # function for setting y-axis tick marks
 yax <- function(x, tickabove = F, ntick = 5) {
@@ -401,6 +402,9 @@ fwrite(covid_clinical, 'covid_clinical_18feb2023.csv')
 # daily trends
 # ------------
 
+# make datasets
+# -------------
+
 # irid
 
 dd <- dcast(d, ADMIDATE ~ diagnosis, value.var = 'total', fun.aggregate = length)
@@ -429,7 +433,8 @@ all_days <- data.table(ADMIDATE = seq(from = as.Date('2002-01-01', origin = '197
                                       by = 'day'))
 nt <- nt[all_days, on = 'ADMIDATE']
 
-# add irid
+# combine data
+# ------------
 
 nt <- merge(nt, dd, by = 'ADMIDATE', all = T)
 nt[is.na(nt)] <- 0L
@@ -446,7 +451,8 @@ nt[, year := year(ADMIDATE)]
 nt <- nt[, .(daysInYear = max(yd)), year][nt, on = 'year']
 nt[, s1 := yd / daysInYear]
 
-# function for time series
+# do time series analysis
+# -----------------------
 
 covid_newdata <- nt[covid == T, c('time', 's1')]
 covid_newdata[, covid := F]
@@ -501,14 +507,13 @@ tsf2 <- function (outcome = 'irid', B = 10, critval = qnorm(0.975), timestart = 
   ))
 }
 
-# time series results
-
 outcomes <- c('irid', 'cocci', 'm2', 'm1', 'invasive')
 set.seed(99011)
 sr <- lapply(outcomes, tsf2, B = 1000)
 names(sr) <- outcomes
 
 # plots
+# -----
 
 cols <- brewer.pal(8, 'Paired')[c(1:4, 7:8)]
 x <- 'irid'
@@ -545,18 +550,34 @@ pf2 <- function (x, title = NA, counter = T, deseason = T, timestart = 4749, ci 
   text(timestart, ymax * 1.1, title, cex = 1.05, adj = 0)
 }
 
-#png('daily_time_series_18nov2022.png', height = 6.5, width = 8.5, units = 'in', res = 300, family = 'Tahoma')
-#cairo_pdf('daily_time_series_18nov2022.pdf', height = 6.5, width = 8.5, family = 'Tahoma')
-#jpeg('Fig2.jpg', height = 6.5, width = 8.5, family = 'Tahoma', units = 'in', res = 600)
-tiff('Fig2.tiff', height = 6.5, width = 8.5, units = 'in', res = 600)
+tiff('Fig2.tiff', height = 4.5, width = 6, units = 'in', res = 600)
 
-m <- matrix(c(1, 2, 5, 3, 4, 5), ncol = 3, byrow = T)
+m <- matrix(1:2, ncol = 2, byrow = T)
+layout(m, widths = c(2, 1))
+par(xpd = NA, mar = c(3, 2, 3, 2), oma = c(2, 3, 0, 0))
+pf2('irid', title = NA, ci = F)
+par(mar = c(0, 0, 0, 0))
+plot(1, type = 'n', xlim = c(0, 10), ylim = c(0, 10), xlab = NA, ylab = NA, axes = F)
+ys <- seq(3, 7, length.out = 5)
+segments(0, ys[1:3], x1 = 3, col = cols[c(6, 4, 2)])
+text(3.5, ys[1:3], rev(c('Trend with seaonality\nand slope/step change\nat 23 March 2020', 'Counterfactual trend\nwith no change\nat 23 March 2020', 'Deseasonalised\ntrend')), adj = 0)
+segments(1.5, ys[4] - mean(diff(ys)/2), y1 = ys[4] + mean(diff(ys)/2), col = 'red', lty = 3)
+text(3.5, ys[4], '23 March 2020', adj = 0)
+points(1.5, ys[5], pch = 4, col = 'grey30', cex = 2)
+text(3.5, ys[5], 'Observed\ndaily count', adj = 0)
+
+dev.off()
+
+emf('FigSX.emf', height = 10, width = 10, family = 'Tahoma')
+
+m <- matrix(c(1, 1, 6, 1, 1, 6, 2, 3, 6, 4, 5, 6), ncol = 3, byrow = T)
 layout(m, widths = c(2, 2, 1.3))
 par(xpd = NA, mar = c(3, 2, 3, 2), oma = c(2, 3, 0, 0))
-pf2('irid', title = 'A: Opiate injection-associated\ninfections', ci = F)
-pf2('cocci', title = 'B: Streptoccocal and staphylococcal skin\ninfections (not related to opioids)', ci = F)
-pf2('m2', title = 'C: Poisoning due to\nillicit drugs', ci = F)
-pf2('m1', title = 'D: Mental & behavioural disorders\nrelated to illicit drugs', ci = F)
+pf2('irid', title = 'A: All opiate injection-associated infections', ci = F)
+pf2('invasive', title = 'B: Invasive opiate injection-\nassociated infections', ci = F)
+pf2('cocci', title = 'C: Streptoccocal and staphylococcal skin\ninfections (not related to opioids)', ci = F)
+pf2('m2', title = 'D: Poisoning due to\nillicit drugs', ci = F)
+pf2('m1', title = 'E: Mental & behavioural disorders\nrelated to illicit drugs', ci = F)
 mtext('Number of admissions per day', side = 2, line = 2, outer = T, cex = 0.65)
 par(mar = c(0, 0, 0, 0))
 plot(1, type = 'n', xlim = c(0, 10), ylim = c(0, 10), xlab = NA, ylab = NA, axes = F)
@@ -569,6 +590,9 @@ points(1.5, ys[5], pch = 4, col = 'grey30', cex = 2)
 text(3.5, ys[5], 'Observed\ndaily count', adj = 0)
 
 dev.off()
+
+# misc results
+# ------------
 
 # average daily numbers per year
 
@@ -592,4 +616,4 @@ for(i in seq_along(season_res)) {
   season_res[[i]] <- cbind(season_res[[i]], `dimnames<-`(matrix(as.character(nt$ADMIDATE[round(season_res[[i]][,2:3], 0)]), ncol = 2), list(c(NULL, NULL, NULL), c('min', 'max'))))
   season_res[[i]] <- cbind(outcome = rep(names(season_res)[i], 3), season_res[[i]])
 }
-fwrite(season_res, 'ratio_summary_10nov2022.csv')
+fwrite(season_res, 'ratio_summary_18nov2023.csv')
