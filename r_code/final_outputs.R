@@ -16,8 +16,8 @@ yax <- function(x, tickabove = F, ntick = 5) { # create axis tick-points: https:
 # vectorized confidence intervals
 
 vpt <- function(x, t, cn = c('rate', 'lower', 'upper'), FUN = poisson.test) {
-  a <- mapply(FUN, x, t, SIMPLIFY = F)
-  a <- sapply(a, function (x) c(x$estimate, x$conf.int[1:2]))
+  f <- function(x, t) if (is.na(x) | is.na(t)) c(NA, NA, NA) else c(x/t, FUN(x, t)$conf.int[1:2])
+  a <- mapply(f, x, t, SIMPLIFY = T)
   `colnames<-`(t(a), cn)
 }
 
@@ -25,10 +25,10 @@ vpt <- function(x, t, cn = c('rate', 'lower', 'upper'), FUN = poisson.test) {
 #  Histogram of age
 #  ................
 
-age_hist <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_histogram_17oct2022.csv')
+age_hist <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_histogram_22feb2023.csv')
 age_qs <- quantile(rep(age_hist$STARTAGE, age_hist$n), probs = c(0.25, 0.5, 0.75))
 
-emf('age_histogram_10nov2022.emf', height = 5, width = 5, family = 'Tahoma')
+emf('age_histogram_22feb2023.emf', height = 5, width = 5, family = 'Tahoma')
 
 par(mar = c(5, 5, 6, 1), xpd = NA)
 plot(1, type = 'n', xlim = c(15, 65), ylim = c(0, 5500), axes = F, xlab = NA, ylab = NA)
@@ -53,10 +53,10 @@ dev.off()
 
 drds <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/input_data/2021registrations.csv')
 drds <- drds[, .(year = year, drds = drug_poisoning)]
-ads <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_17oct2022.csv')
+ads <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_22feb2023.csv')
 ads <- ads[, .(ad = sum(admissions)), year]
 avd <- drds[ads, on = 'year'][order(year)]
-days <- data.table(day = seq(from = as.Date('2002-01-01', origin = '1970-01-01'), to = as.Date('2021-12-31', origin = '1970-01-01'), by = 'day'))
+days <- data.table(day = seq(from = as.Date('2002-01-01', origin = '1970-01-01'), to = as.Date('2022-12-31', origin = '1970-01-01'), by = 'day'))
 days[, year := year(day)]
 days <- days[, .(nd = .N), year]
 avd <- days[avd, on = 'year']
@@ -66,10 +66,9 @@ avd <- cbind(avd,
 
 round(avd[year %in% c(2003, 2011, 2019, 2020), c('year', 'ad_rt', 'ad_upper', 'ad_lower')], 2)
 
-
 #  age-stratified counts by year (plus percentages)
 
-yrAge <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_17oct2022.csv')
+yrAge <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/admissions_by_year_and_age_group_22feb2023.csv')
 yrAge <- yrAge[, .(yearTotal = sum(admissions)), year][yrAge, on = 'year']
 yrAge[, pc := admissions / yearTotal]
 yrAge <- yrAge[order(year, age_group)]
@@ -80,75 +79,66 @@ yrAge[, y1a := shift(y2a, fill = 0L), year]
 yrAge[, y2b := cumsum(pc), year]
 yrAge[, y1b := shift(y2b, fill = 0L), year]
 cols2 <- brewer.pal(5, 'Spectral')
-yrAge[, cl := as.character(factor(age_group, c('15', '25', '35', '45', '54'), cols2))]
+yrAge[, cl := as.character(factor(age_group, c('15', '25', '35', '45', '55'), cols2))]
 
 # age quantiles
 
-age_quantiles <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_quantiles_17oct2022.csv')
+age_quantiles <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/age_quantiles_22feb2023.csv')
 age_quantiles <- age_quantiles[age_quantiles$region == 'England']
 age_quantiles <- age_quantiles[, c(3:7)]
 
 # homelessness
 
-hln <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/homeless_14nov2022.csv')
+hln <- fread('https://raw.githubusercontent.com/danlewer/irid_trends/main/summary_tables/homeless_22feb2023.csv')
 hln[, total := yes + no]
-hln <- cbind(hln, vpt(x = hln$yes, t = hln$total, cn = c('prop', 'lower', 'upper')))
+hln <- cbind(hln, vpt(x = hln$yes, t = hln$total, FUN = prop.test, cn = c('prop', 'lower', 'upper')))
 
-#emf('Figure1.emf', height = 9, width = 4, family = 'Franklin Gothic Book')
-#png('Figure1_18nov2022.png', height = 9, width = 9, family = 'Tahoma', res = 300, units = 'in')
-cairo_pdf('Figure1_21nov2022.pdf', height = 9, width = 9, family = 'Tahoma')
+# age plot
+# --------
 
-par(mar = c(3, 5, 4, 5), xpd = NA, mfrow = c(2, 2))
-xl <- seq(2005, 2020, 5)
+tiff('Fig1.tiff', height = 9, width = 4.5, units = 'in', res = 600, family = 'Tahoma')
 
-# compared to DRDs
-
-cols <- brewer.pal(4, 'Paired')
-
-plot(1, type = 'n', ylim = c(0, 20), xlim = c(2002, 2021), axes = F, xlab = NA, ylab = NA)
-axis(1, 2002:2021, labels = F, pos = 0)
-text(xl, -1, labels = xl, srt = 60, adj = 1)
-axis(2, 0:4 * 5, las = 2, pos = 2002)
-segments(2002, 0:4 * 5, 2021, col = 'grey80', lwd = 0.6)
-
-with(avd, {
-  polygon(x = c(year, rev(year)), y = c(d_lower, rev(d_upper)), col = cols[1], border = NA)
-  lines(year, d_rt, col = cols[2])
-  points(year, d_rt, col = cols[2], pch = 19)
-  polygon(x = c(year, rev(year)), y = c(ad_lower, rev(ad_upper)), col = cols[3], border = NA)
-  lines(year, ad_rt, col = cols[4])
-  points(year, ad_rt, col = cols[4], pch = 19)
-})
-
-text(2002, 20 * 1.1, 'A: Hospital admissions due to injection-associated\ninfections, compared to deaths due to drug poisoning', adj = 0, cex = 1.05)
-title(ylab = 'Rate per day')
-
-ys <- c(8.5, 11.5)
-segments(x0 = 2021.5, y0 = ys, x1 = 2022.5, col = cols[c(2, 4)])
-text(2023, ys, c('Deaths', 'Infections'), adj = 0)
+par(mfrow = c(3, 1), mar = c(3, 3, 3, 8), xpd = NA)
 
 # numbers by age
 
-plot(1, type = 'n', xlim = c(2002, 2022), ylim = c(0, 20), axes = F, ylab = NA, xlab = NA)
+plot(1, type = 'n', xlim = c(2002, 2021), ylim = c(0, 20), axes = F, ylab = NA, xlab = NA)
 segments(2002, 0:4 * 5, 2022, col = 'grey80', lwd = 0.6)
+rect(2002, 0, 2022, 20)
 with(yrAge, rect(xleft = year, ybottom = y1a, xright = year + 1, ytop = y2a, col = cl))
 axis(2, 0:4 * 5, pos = 2002, las = 2)
 axis(1, 2002:2022, labels = F, pos = 0)
-text(xl + 0.5, -1, labels = xl, srt = 60, adj = 1)
+text(2002:2021 + 0.5, -1, labels = 2002:2021, srt = 60, adj = 1)
 ys <- seq(5, 15, length.out = 6)
 rect(2023, ys[-1], 2024, ys[-length(ys)], col = cols2)
 text(2024.5, ys[-length(ys)] + diff(ys)/2, c('15-24', '25-34', '35-44', '45-54', '55-64'), adj = 0)
-text(2023, max(ys) + max(ys)/10, 'Age at\nadmission', adj = 0)
-text(2002, 20 * 1.1, 'B: Hospital admissions due to injection-associated\ninfections, by age at admission', adj = 0, cex = 1.05)
-title(ylab = 'Rate per day')
+text(2023, max(ys) + max(ys)/7.5, 'Age at\nadmission', adj = 0)
+text(2002, 20 * 1.1, 'A: Number of admissions per day, by age group', adj = 0, cex = 1.05)
+title(ylab = 'Number per day')
+
+# proportion by age
+
+plot(1, type = 'n', xlim = c(2002, 2021), ylim = c(0, 1), axes = F, ylab = NA, xlab = NA)
+rect(2002, 0, 2022, 1)
+with(yrAge, rect(xleft = year, ybottom = y1b, xright = year + 1, ytop = y2b, col = cl))
+axis(2, 0:5/5, paste0(0:5 * 20, '%'), pos = 2002, las = 2)
+axis(1, 2002:2022, labels = F, pos = 0)
+text(2002:2021 + 0.5, -1/20, labels = 2002:2021, srt = 60, adj = 1)
+ys <- seq(0.2, 0.8, length.out = 6)
+rect(2023, ys[-1], 2024, ys[-length(ys)], col = cols2)
+text(2024.5, ys[-length(ys)] + diff(ys)/2, c('15-24', '25-34', '35-44', '45-54', '55-64'), adj = 0)
+text(2023, max(ys) + max(ys)/6.5, 'Age at\nadmission', adj = 0)
+text(2002, 1.1, 'B: Proportion of admissions by age group', adj = 0, cex = 1.05)
+title(ylab = 'Percent of patients')
 
 # distribution of age
 
 col <- brewer.pal(5, 'Spectral')[4]
 gap <- 0.3
 ys <- seq(30, 50, length.out = 5)
-plot(1, type = 'n', xlim = c(2002, 2022), ylim = c(20, 60), axes = F, xlab = NA, ylab = NA)
+plot(1, type = 'n', xlim = c(2002, 2021), ylim = c(20, 60), axes = F, xlab = NA, ylab = NA)
 segments(2002, 2:6 * 10, x1 = 2022, col = 'grey80', lwd = 0.6)
+rect(2002, 20, 2022, 60)
 arrows(x0 = 2002:2021 + 0.5, y0 = age_quantiles$q0.05, y1 = age_quantiles$q0.95, length = 0.03, code = 3, angle = 90)
 rect( 
   xleft = 2002:2021 + 0.5 - gap, 
@@ -158,31 +148,72 @@ rect(
   col = col)
 segments(x0 = 2002:2021 + 0.5 - gap, y0 = age_quantiles$q0.5, x1 = 2002:2021 + 0.5 + gap)
 axis(1, 2002:2022, labels = F, pos = 20)
-text(xl + 0.5, 18, labels = xl, srt = 60, adj = 1)
+text(2002:2021 + 0.5, 18, labels = 2002:2021, srt = 60, adj = 1)
 axis(2, 2:6 * 10, pos = 2002, las = 2)
 arrows(2023.5, y0 = ys[1], y1 = ys[5], length = 0.05, code = 3, angle = 90)
 rect(2023.5 - gap, ys[2], 2023.5 + gap, ys[4], col = col)
 segments(x0 = 2023.5 - gap, y0 = ys[3], x1 = 2023.5 + gap)
 text(2023.5 + gap + 0.5, ys, c(0.05, 0.25, 0.5, 0.75, 0.95), adj = 0)
-text(2023.5, max(ys) + max(ys)/10, 'Quantile\nof age', adj = 0)
-text(2002, 60 + 40 * 0.1, 'C: Distribution of age at hospital admission\ndue to injection-associated infections', adj = 0, cex = 1.05)
+text(2023.5, max(ys) + max(ys)/6.5, 'Quantile\nof age', adj = 0)
+text(2002, 60 + 40 * 0.1, 'C: Distribution of age at admission', adj = 0, cex = 1.05)
 title(ylab = 'Age at admission')
+
+dev.off()
+
+# homelessness and DRD plots
+# --------------------------
+
+# compared to DRDs
+
+emf('FigSX_drds.emf', height = 4, width = 7, family = 'Tahoma')
+
+par(mar = c(4, 4, 1, 8), xpd = NA)
+cols <- brewer.pal(4, 'Paired')
+
+plot(1, type = 'n', ylim = c(0, 20), xlim = c(2002, 2021), axes = F, xlab = NA, ylab = NA)
+rect(2002, 0, 2021, 20, col = 'white')
+segments(2002, 0:4 * 5, 2021, col = 'grey80', lwd = 0.6)
+rect(2002, 0, 2021, 20)
+axis(1, 2002:2021, labels = F, pos = 0)
+text(2002:2021, -1.5, labels = 2002:2021, srt = 60, adj = 1)
+axis(2, 0:4 * 5, las = 2, pos = 2002)
+
+with(avd[!is.na(drds)], {
+  polygon(x = c(year, rev(year)), y = c(d_lower, rev(d_upper)), col = cols[1], border = NA)
+  lines(year, d_rt, col = cols[2])
+  points(year, d_rt, col = cols[2], pch = 19)
+})
+with(avd, {
+  polygon(x = c(year, rev(year)), y = c(ad_lower, rev(ad_upper)), col = cols[3], border = NA)
+  lines(year, ad_rt, col = cols[4])
+  points(year, ad_rt, col = cols[4], pch = 19)
+})
+
+title(ylab = 'Number per day', line = 2)
+ys <- c(8.5, 11.5)
+segments(x0 = 2021.5, y0 = ys, x1 = 2022.5, col = cols[c(2, 4)], lwd = 3)
+text(2024, ys, c('Deaths', 'Infections'), adj = 0)
+
+dev.off()
 
 # homelessness
 
-cols <- brewer.pal(4, 'Paired')
+emf('FigSX_homelessness.emf', height = 4, width = 5.5, family = 'Tahoma')
 
-plot(1, type = 'n', xlim = c(2002, 2022), ylim = c(0, 0.2), axes = F, xlab = NA, ylab = NA)
-axis(1, 2002:2022, labels = F, pos = 0)
-text(xl, -0.01, labels = xl, srt = 60, adj = 1)
+cols <- brewer.pal(4, 'Paired')
+par(mar = c(4, 4, 1, 1), xpd = NA)
+plot(1, type = 'n', xlim = c(2002, 2021), ylim = c(0, 0.2), axes = F, xlab = NA, ylab = NA)
+rect(2002, 0, 2021, 0.2, col = 'white')
+segments(2002, 0:4 * 5 / 100, x1 = 2021, col = 'grey80', lwd = 0.6)
+rect(2002, 0, 2021, 0.2)
+axis(1, 2002:2021, labels = F, pos = 0)
+text(2002:2021, -0.02, labels = 2002:2021, srt = 60, adj = 1)
 axis(2, 0:4 * 5 / 100, paste0(0:4 * 5, '%'), pos = 2002, las = 2)
-segments(2002, 0:4 * 5 / 100, x1 = 2022, col = 'grey80', lwd = 0.6)
 with(hln, {
   polygon(x = c(year, rev(year)), y = c(lower, rev(upper)), col = cols[1], border = NA)
   lines(year, prop, col = cols[2])
   points(year, prop, col = cols[2], pch = 19)
 })
-text(2002, 0.2 * 1.1, 'D: Admissions due to injection-associated\ninfections where homelessness is coded', adj = 0, cex = 1.05)
 title(ylab = 'Proportion of admissions')
 
 dev.off()
