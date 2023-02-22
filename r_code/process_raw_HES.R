@@ -73,11 +73,10 @@ d <- copy(d_raw)
 # format variables
 # ----------------
 
-# age, sex, ethnicity
+# age
 d[, STARTAGE := as.integer(STARTAGE)]
-age_lims <- c(15, 25, 35, 45, 55)
-d[, age_group := findInterval(STARTAGE, age_lims)]
-d[, age_group := factor(age_group, seq_along(age_lims), age_lims)]
+
+# sex
 d[, SEX := factor(SEX, c(1, 2, 9, 0), c('male', 'female or not known', 'female or not known', 'female or not known'))]
 
 # region
@@ -194,6 +193,7 @@ d[, age_impute := NULL]
 # exclude ineligible episodes
 # ---------------------------
 
+d <- d[year != 2022]
 d <- d[EPIORDER == 1]
 d <- d[EPISTAT == 3]
 d <- d[!is.na(STARTAGE)]
@@ -203,21 +203,25 @@ d <- d[region != 'Not England']
 # exclusion criteria
 # ------------------
 
-nrow(d) # 102154
+nrow(d) # 97549
 d[, .N, factor(findInterval(STARTAGE, c(0, 15, 65)), 1:3, c('0-14', '15-64', '65+'))]
-# 0-14 = 12; 65+ = 510
+# 0-14 = 10; 65+ = 444
 d <- d[STARTAGE >= 15 & STARTAGE <= 64]
-nrow(d) # 101632
+nrow(d) # 97095
 d[, .N, epo]
-# planned = 3940; other = 1118
+# planned = 3716; other = 1076
 d <- d[epo == 'emergency']
 nrow(d) # 96574
 
 d <- droplevels(d)
 
-# ===================
-# detailed age groups
-# -------------------
+# ==========
+# age groups
+# ----------
+
+age_lims <- c(15, 25, 35, 45, 55)
+d[, age_group := findInterval(STARTAGE, age_lims)]
+d[, age_group := factor(age_group, seq_along(age_lims), age_lims)]
 
 age_lims2 <- c(0, 18, seq(20, 70, 5))
 d[, age_group2 := findInterval(STARTAGE, age_lims2)]
@@ -225,7 +229,7 @@ d[, age_group2 := factor(age_group2, seq_along(age_lims2), age_lims2)]
 detailed_age_groups <- d[, .N, c('year', 'age_group2')]
 detailed_age_groups[, N := pmax(N, 10)]
 detailed_age_groups <- detailed_age_groups[order(year, age_group2)]
-fwrite(detailed_age_groups, 'irid_age_group_by_year_18feb2023.csv')
+fwrite(detailed_age_groups, 'irid_age_group_by_year_22feb2023.csv')
 
 # ================================
 # further clinical characteristics
@@ -254,9 +258,9 @@ age_quantiles <- rbind(aggregate(d$STARTAGE, by = list(region = d$region, year =
                        cbind(region = 'England', aggregate(d$STARTAGE, by = list(year = d$year), quantile, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))))
 age_quantiles <- data.table(age_quantiles)
 names(age_quantiles) <- c('region', 'year', 'q0.05', 'q0.25', 'q0.5', 'q0.75', 'q0.95')
-fwrite(age_quantiles, 'age_quantiles_18feb2023.csv')
+fwrite(age_quantiles, 'age_quantiles_22feb2023.csv')
 
-age_quantiles[region == 'England'  & year %in% c(2002, 2022)]
+age_quantiles[region == 'England'  & year %in% c(2002, 2021)]
 
 # ============
 # homelessness
@@ -267,7 +271,9 @@ d[, homeless := homeless == T | region == 'No fixed abode']
 
 homelessness <- dcast(d, year ~ homeless, value.var = 'EPIKEY', fun.aggregate = length)
 names(homelessness) <- c('year', 'no', 'yes')
-fwrite(homelessness, 'homeless_18feb2023.csv')
+homelessness[, total := yes + no]
+homelessness[, prop := yes / total]
+fwrite(homelessness, 'homeless_22feb2023.csv')
 
 # ==================
 # annual time trends
@@ -276,7 +282,7 @@ fwrite(homelessness, 'homeless_18feb2023.csv')
 yrAge <- d[year >= 1998 & year <= 2022, .(admissions = .N), c('year', 'age_group')]
 # redact small cells (very few of these)
 yrAge[, admissions := pmax(10, admissions)]
-fwrite(yrAge, 'admissions_by_year_and_age_group_18feb2023.csv')
+fwrite(yrAge, 'admissions_by_year_and_age_group_22feb2023.csv')
 
 # ============================
 # table 1 and descriptive data
@@ -285,7 +291,7 @@ fwrite(yrAge, 'admissions_by_year_and_age_group_18feb2023.csv')
 # age histogram
 
 age_hist <- d[, .(n = pmax(10, .N)), STARTAGE][order(STARTAGE)]
-fwrite(age_hist, 'age_histogram_18feb2023.csv')
+fwrite(age_hist, 'age_histogram_22feb2023.csv')
 
 # table 1
 
@@ -297,7 +303,8 @@ cv2 <- function (v = 'finalDis', dat = d, digs = 1) {
   a$val <- paste0(a$n, '(', a$pc, ')')
   a$val <- gsub(' ', '', a$val)
   a$val <- gsub('\\(', ' (', a$val)
-  data.frame(variable = rep(v, nrow(a)), level = a[, get(v)], val = a$val)
+  a <- data.frame(variable = rep(v, nrow(a)), level = a[, get(v)], val = a$val)
+  a[order(a$level),]
 }
 
 nv2 <- function (v, dat = d, digs = 1) {
@@ -314,7 +321,7 @@ nv2 <- function (v, dat = d, digs = 1) {
 }
 
 vars <- c('total2', 'age_group', 'STARTAGE', 'SEX', 'ETHNOS', 'imd5', 'homeless', 'region', 'finalDis', 'diagnosis', 'dur', 'operat', 'read')
-d[, invasive := diagnosis %in% c('endocarditis', 'osteomyelitis', 'septicaemia', 'nf')]
+d[, invasive := diagnosis %in% c('endocarditis', 'osteo', 'septicaemia', 'nf')]
 
 def <- function (v, dat = d) if (class(d[, get(v)]) %in% c('integer', 'numeric')) nv2(v, dat = dat) else cv2(v, dat = dat)
 
@@ -336,9 +343,9 @@ for (i in seq_along(table1_by_year)) {
 }
 table1_by_year <- Reduce(function(...) merge(..., all = TRUE, sort = F), table1_by_year)
 
-fwrite(table1, 'table1_18feb2023.csv')
-fwrite(table1_by_diag, 'table1_by_diag_18feb2023.csv')
-fwrite(table1_by_year, 'table1_by_year_18feb2023.csv')
+fwrite(table1, 'table1_22feb2023.csv')
+fwrite(table1_by_diag, 'table1_by_diag_22feb2023.csv')
+fwrite(table1_by_year, 'table1_by_year_22feb2023.csv')
 
 # ==================================================
 # clinical characteristics before and after COVID-19
@@ -396,11 +403,12 @@ covid_clinical <- rbind(cv1('dummy', dat = d),
                         cv1('died', dat = d),
                         cv1('invasive', dat = d))
 
-fwrite(covid_clinical, 'covid_clinical_18feb2023.csv')
+fwrite(covid_clinical, 'covid_clinical_22feb2023.csv')
 
-# ============
-# daily trends
-# ------------
+# ====================
+# time series analysis
+# --------------------
+
 
 # make datasets
 # -------------
@@ -416,7 +424,8 @@ dd[, irid := sstvi + invasive]
 
 file_names <- c(cocci = 'comparison_skin_18feb2023.csv',
                 m1 = 'comparison_m1_18feb2023.csv',
-                m2 = 'comparison_m2_18feb2023.csv')
+                m2 = 'comparison_m2_18feb2023.csv',
+                f11 = 'comparison_f11_21feb2023.csv')
 
 nt <- mapply(fread, 
              file = file_names,
@@ -429,7 +438,7 @@ for(i in seq_along(nt)) {
 nt <- Reduce(function(...) merge(..., all = TRUE), nt)
 nt <- nt[year(ADMIDATE) %between% c(2002, 2022)]
 all_days <- data.table(ADMIDATE = seq(from = as.Date('2002-01-01', origin = '1970-01-01'), 
-                                      to = as.Date('2022-12-31', origin = '1970-01-01'),
+                                      to = as.Date('2021-12-31', origin = '1970-01-01'),
                                       by = 'day'))
 nt <- nt[all_days, on = 'ADMIDATE']
 
@@ -458,8 +467,8 @@ covid_newdata <- nt[covid == T, c('time', 's1')]
 covid_newdata[, covid := F]
 covid_newdata[, slope := 0]
 
-tsf2 <- function (outcome = 'irid', B = 10, critval = qnorm(0.975), timestart = 4749, harm = 2) {
-  dat <- nt[time >= timestart]
+tsf2 <- function (outcome = 'irid', B = 10, critval = qnorm(0.975), year_range = 2015:2021, harm = 2) {
+  dat <- nt[year %in% year_range]
   f <- as.formula(paste0(outcome, '~ time + covid + slope + harmonic(s1,', harm, ', period = 1)'))
   m <- glm(f, data = dat, family = 'poisson')
   p <- predict(m, newdata = dat, se.fit = T)
@@ -507,27 +516,29 @@ tsf2 <- function (outcome = 'irid', B = 10, critval = qnorm(0.975), timestart = 
   ))
 }
 
-outcomes <- c('irid', 'cocci', 'm2', 'm1', 'invasive')
-set.seed(99011)
+outcomes <- c('irid', 'cocci', 'm2', 'm1', 'invasive', 'f11')
+set.seed(388)
 sr <- lapply(outcomes, tsf2, B = 1000)
 names(sr) <- outcomes
 
-# plots
-# -----
+# time series plots
+# -----------------
 
 cols <- brewer.pal(8, 'Paired')[c(1:4, 7:8)]
 x <- 'irid'
 jan <- nt[yd == 1, time]
 covid_day <- nt[ADMIDATE == '2020-03-23', time]
 
-pf2 <- function (x, title = NA, counter = T, deseason = T, timestart = 4749, ci = F) {
-  jan2 <- nt[time >= timestart & yd == 1, time]
-  ymax <- max(nt[time >= timestart, get(x)]) * 1.05
-  xmax <- nt[, max(time)] + 1
-  plot(1, type = 'n', xlim = c(timestart, xmax), ylim = c(0, ymax), axes = F, xlab = NA, ylab = NA)
+pf2 <- function (x, title = NA, counter = T, deseason = T, year_range = 2015:2021, ci = F) {
+  jan2 <- nt[year %in% year_range & yd == 1, time]
+  ymax <- max(nt[year %in% year_range, get(x)]) * 1.05
+  xmin <- nt[year %in% year_range, min(time)]
+  xmax <- nt[year %in% year_range, max(time)] + 1
+  plot(1, type = 'n', xlim = c(xmin, xmax), ylim = c(0, ymax), axes = F, xlab = NA, ylab = NA)
+  rect(xmin, 0, xmax, ymax, col = 'white')
   segments(jan2, 0, y1 = ymax, lwd = 0.3, col = 'grey70')
-  rect(timestart, 0, xmax, ymax)
-  points(nt[time >= timestart, time], nt[time >= timestart, get(x)], pch = 4, cex = 0.6, col = 'grey80')
+  rect(xmin, 0, xmax, ymax)
+  points(nt[year %in% year_range, time], nt[year %in% year_range, get(x)], pch = 4, cex = 0.6, col = 'grey80')
   if (deseason) {
     with(sr[[x]]$des, {
       if (ci) polygon(x = c(time, rev(time)), y = c(lower, rev(upper)), col = cols[5], border = NA)
@@ -539,81 +550,92 @@ pf2 <- function (x, title = NA, counter = T, deseason = T, timestart = 4749, ci 
       lines(x = time, y = fit, col = cols[4])
     })}
   with(sr[[x]]$fit, {
-    if (ci) polygon(x = c(nt[time >= timestart, time], rev(nt[time >= timestart, time])), y = c(lower, rev(upper)), col = cols[1], border = NA)
-    lines(x = nt[time >= timestart, time], y = fit, col = cols[2])
+    if (ci) polygon(x = c(nt[year %in% year_range, time], rev(nt[year %in% year_range, time])), y = c(lower, rev(upper)), col = cols[1], border = NA)
+    lines(x = nt[year %in% year_range, time], y = fit, col = cols[2])
   })
-  segments(covid_day, 0, y1 = ymax, lwd = 0.8, col = 'red', lty = 3)
-  axis(2, at = yax(ymax), las = 2, pos = timestart)
-  xtick <- unique(c(timestart, jan2))
+  segments(covid_day, 0, y1 = ymax, lwd = 0.8, col = 'red', lty = 2)
+  axis(2, at = yax(ymax), las = 2, pos = xmin)
+  xtick <- unique(c(xmin, jan2))
   axis(1, at = c(xtick, xmax), labels = F, pos = 0)
-  text(jan2 + diff(c(xtick, xmax) / 2), ymax * -0.05, nt[time >= timestart & yd == 1, year], srt = 60, adj = 1)
-  text(timestart, ymax * 1.1, title, cex = 1.05, adj = 0)
+  text(jan2 + diff(c(xtick, xmax) / 2), ymax * -0.05, nt[year %in% year_range & yd == 1, year], srt = 60, adj = 1)
+  text(xmin, ymax * 1.1, title, cex = 1.05, adj = 0)
 }
 
-tiff('Fig2.tiff', height = 4.5, width = 6, units = 'in', res = 600)
+pf3 <- function (...) {
+  m <- matrix(1:2, ncol = 2, byrow = T)
+  layout(m, widths = c(2, 0.8))
+  par(xpd = NA, mar = c(3, 2, 3, 2), oma = c(2, 3, 0, 0))
+  pf2(...)
+  par(mar = c(0, 0, 0, 0))
+  plot(1, type = 'n', xlim = c(0, 10), ylim = c(0, 10), xlab = NA, ylab = NA, axes = F)
+  ys <- seq(1.5, 8.5, length.out = 5)
+  segments(0, ys[1:3], x1 = 3, col = cols[c(6, 4, 2)])
+  text(3.5, ys[1:3], rev(c('Trend with seaonality\nand slope/step change\nat 23 March 2020', 'Counterfactual trend\nwith no change\nat 23 March 2020', 'Deseasonalised\ntrend')), adj = 0)
+  segments(1.5, ys[4] - mean(diff(ys)/2), y1 = ys[4] + mean(diff(ys)/2), col = 'red', lty = 2)
+  text(3.5, ys[4], '23 March 2020', adj = 0)
+  points(1.5, ys[5], pch = 4, col = 'grey30', cex = 2)
+  text(3.5, ys[5], 'Observed\ndaily count', adj = 0)
+  mtext('Number of hospital admissions per day', side = 2, line = 1, outer = T)
+}
 
-m <- matrix(1:2, ncol = 2, byrow = T)
-layout(m, widths = c(2, 1))
-par(xpd = NA, mar = c(3, 2, 3, 2), oma = c(2, 3, 0, 0))
-pf2('irid', title = NA, ci = F)
-par(mar = c(0, 0, 0, 0))
-plot(1, type = 'n', xlim = c(0, 10), ylim = c(0, 10), xlab = NA, ylab = NA, axes = F)
-ys <- seq(3, 7, length.out = 5)
-segments(0, ys[1:3], x1 = 3, col = cols[c(6, 4, 2)])
-text(3.5, ys[1:3], rev(c('Trend with seaonality\nand slope/step change\nat 23 March 2020', 'Counterfactual trend\nwith no change\nat 23 March 2020', 'Deseasonalised\ntrend')), adj = 0)
-segments(1.5, ys[4] - mean(diff(ys)/2), y1 = ys[4] + mean(diff(ys)/2), col = 'red', lty = 3)
-text(3.5, ys[4], '23 March 2020', adj = 0)
-points(1.5, ys[5], pch = 4, col = 'grey30', cex = 2)
-text(3.5, ys[5], 'Observed\ndaily count', adj = 0)
-
+tiff('Fig2.tiff', height = 8, width = 10, units = 'in', res = 600, family = 'Tahoma')
+pf3('irid')
 dev.off()
 
-emf('FigSX.emf', height = 10, width = 10, family = 'Tahoma')
+emf('FigSX_cocci.emf', height = 8, width = 10, family = 'Tahoma')
+pf3('cocci')
+dev.off()
 
-m <- matrix(c(1, 1, 6, 1, 1, 6, 2, 3, 6, 4, 5, 6), ncol = 3, byrow = T)
-layout(m, widths = c(2, 2, 1.3))
-par(xpd = NA, mar = c(3, 2, 3, 2), oma = c(2, 3, 0, 0))
-pf2('irid', title = 'A: All opiate injection-associated infections', ci = F)
-pf2('invasive', title = 'B: Invasive opiate injection-\nassociated infections', ci = F)
-pf2('cocci', title = 'C: Streptoccocal and staphylococcal skin\ninfections (not related to opioids)', ci = F)
-pf2('m2', title = 'D: Poisoning due to\nillicit drugs', ci = F)
-pf2('m1', title = 'E: Mental & behavioural disorders\nrelated to illicit drugs', ci = F)
-mtext('Number of admissions per day', side = 2, line = 2, outer = T, cex = 0.65)
-par(mar = c(0, 0, 0, 0))
-plot(1, type = 'n', xlim = c(0, 10), ylim = c(0, 10), xlab = NA, ylab = NA, axes = F)
-ys <- seq(3, 7, length.out = 5)
-segments(0, ys[1:3], x1 = 3, col = cols[c(6, 4, 2)])
-text(3.5, ys[1:3], rev(c('Trend with seaonality\nand slope/step change\nat 23 March 2020', 'Counterfactual trend\nwith no change\nat 23 March 2020', 'Deseasonalised\ntrend')), adj = 0)
-segments(1.5, ys[4] - mean(diff(ys)/2), y1 = ys[4] + mean(diff(ys)/2), col = 'red', lty = 3)
-text(3.5, ys[4], '23 March 2020', adj = 0)
-points(1.5, ys[5], pch = 4, col = 'grey30', cex = 2)
-text(3.5, ys[5], 'Observed\ndaily count', adj = 0)
+emf('FigSX_invasive.emf', height = 8, width = 10, family = 'Tahoma')
+pf3('invasive')
+dev.off()
 
+emf('FigSX_m1.emf', height = 8, width = 10, family = 'Tahoma')
+pf3('m1')
+dev.off()
+
+emf('FigSX_m2.emf', height = 8, width = 10, family = 'Tahoma')
+pf3('m2')
+dev.off()
+
+emf('FigSX_f11.emf', height = 8, width = 10, family = 'Tahoma')
+pf3('f11')
 dev.off()
 
 # misc results
 # ------------
 
+# model coefficients
+
+nt[, time2 := time / 365]
+nt[, slope2 := slope / 365]
+m <- glm(irid ~ time2 + covid + slope2 + harmonic(s1, 2, period = 1), data = nt[year %in% 2015:2021], family = 'poisson')
+m_res <- cbind(coef(m), confint(m))
+m_res <- exp(m_res)
+m_res <- format(round(m_res, 3), digits = 3, nsmall = 3)
+m_res <- data.table(var = row.names(m_res), IRR = paste0(m_res[,1], ' (', m_res[,2], '-', m_res[,3], ')'))
+fwrite(m_res, 'model_coefficients_22feb2023.csv')
+
 # average daily numbers per year
 
 nt[, dummy := 1]
-
 diagnoses <- c('irid', unique(as.character(d$diagnosis)))
 yearly <- nt[, lapply(.SD, function (x) sum(x)), c('year', 'covid'), .SD = c(diagnoses, 'dummy')]
 yearly_rates <- mapply(vpt, x = yearly[, diagnoses, with = F], t = list(yearly$dummy), SIMPLIFY = F)
 yearly_rates <- lapply(yearly_rates, function (x) `dimnames<-`(t(x), value = list(paste0(yearly$year, '-', yearly$covid), c('point', 'lower', 'upper'))))
 yearly_rates$irid
 
-# covid change in rate
+# table 2
 
-sapply(sr, function (x) x$cov)
-(1 - sapply(sr, function (x) x$cov)) * 100
-
-# ratio
-
-season_res <- lapply(sr, function (x) apply(x$rat, 1, quantile, probs = c(0.5, 0.025, 0.975)))
-for(i in seq_along(season_res)) {
-  season_res[[i]] <- cbind(season_res[[i]], `dimnames<-`(matrix(as.character(nt$ADMIDATE[round(season_res[[i]][,2:3], 0)]), ncol = 2), list(c(NULL, NULL, NULL), c('min', 'max'))))
-  season_res[[i]] <- cbind(outcome = rep(names(season_res)[i], 3), season_res[[i]])
-}
-fwrite(season_res, 'ratio_summary_18nov2023.csv')
+table2 <- lapply(sr, function (x) apply(x$rat, 1, quantile, probs = c(0.5, 0.025, 0.975)))
+dys <- seq(from = as.Date('2022-01-01'), to = as.Date('2022-12-31'), by = 'day')
+min_max <- lapply(table2, function (x) matrix(format(dys[x[,2:3]], '%d %b'), ncol = 2))
+min_max <- `colnames<-`(t(sapply(min_max, function (x) x[1,])), c('low', 'high'))
+ratios <- lapply(table2, function (x) format(round(x[, 1], 2), digits = 2, nsmall = 2))
+ratios <- sapply(ratios, function (x) paste0(x[1], ' (', x[2], ', ', x[3], ')'))
+covid_pc <- (1 - sapply(sr, function (x) x$cov)) * 100
+covid_pc <- format(round(covid_pc, 1), digits = 1, nsmall = 1)
+covid_pc <- paste0(covid_pc[1,], '(', covid_pc[2,], ',', covid_pc[3,], ')')
+covid_pc <- gsub(',', ', ', gsub('\\(', ' (', gsub(' ', '', covid_pc)))
+table2 <- cbind(var = names(sr), ratio = ratios, min_max, covid = covid_pc)
+fwrite(table2, 'table2_22feb2023.csv')
