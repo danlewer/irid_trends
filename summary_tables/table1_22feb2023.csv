@@ -1,0 +1,53 @@
+variable,level,val
+total2,total,"92,303 (100.0)"
+age_group,15,"4,898 (5.3)"
+age_group,25,"32,382 (35.1)"
+age_group,35,"38,511 (41.7)"
+age_group,45,"14,234 (15.4)"
+age_group,55,"2,278 (2.5)"
+STARTAGE,Median [IQR],37 [31-42]
+STARTAGE,Mean [sd],37.0 [8.2]
+SEX,male,"66,359 (71.9)"
+SEX,female or not known,"25,944 (28.1)"
+ETHNOS,White,"85,809 (93.0)"
+ETHNOS,Black,853 (0.9)
+ETHNOS,Asian,703 (0.8)
+ETHNOS,Mixed,899 (1.0)
+ETHNOS,Other or unknown,"4,039 (4.4)"
+imd5,1 - most deprived,"52,657 (57.0)"
+imd5,2,"20,403 (22.1)"
+imd5,3,"10,024 (10.9)"
+imd5,4,"5,325 (5.8)"
+imd5,5 - least deprived,"2,746 (3.0)"
+imd5,missing,"1,148 (1.2)"
+homeless,FALSE,"84,701 (91.8)"
+homeless,TRUE,"7,602 (8.2)"
+region,East Midlands,"7,045 (7.6)"
+region,East of England,"4,480 (4.9)"
+region,London,"7,115 (7.7)"
+region,No fixed abode,"5,018 (5.4)"
+region,North East,"6,585 (7.1)"
+region,North West,"19,470 (21.1)"
+region,South East,"7,022 (7.6)"
+region,South West,"8,695 (9.4)"
+region,Unknown,"2,056 (2.2)"
+region,West Midlands,"7,569 (8.2)"
+region,Yorkshire & Humber,"17,248 (18.7)"
+finalDis,died,732 (0.8)
+finalDis,DAMA,"14,899 (16.1)"
+finalDis,normal,"73,598 (79.7)"
+finalDis,other,"3,074 (3.3)"
+diagnosis,abscess,"29,634 (32.1)"
+diagnosis,cellulitis,"20,046 (21.7)"
+diagnosis,other_ssti,"8,377 (9.1)"
+diagnosis,phlebitis,"21,833 (23.7)"
+diagnosis,endocarditis,"2,152 (2.3)"
+diagnosis,septicaemia,"6,087 (6.6)"
+diagnosis,osteo,"3,905 (4.2)"
+diagnosis,nf,269 (0.3)
+dur,Median [IQR],3 [1-5]
+dur,Mean [sd],4.8 [6.9]
+operat,FALSE,"61,020 (66.1)"
+operat,TRUE,"31,283 (33.9)"
+read,FALSE,"74,937 (81.2)"
+read,TRUE,"17,366 (18.8)"
