@@ -1,5 +1,5 @@
 # secure folder location
-setwd("Z:/IA_UserData/dan.lewer/pwid_bacterial_infections/update_2022")
+setwd("url")
 
 # =======================
 # libraries and functions
