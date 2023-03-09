@@ -96,7 +96,7 @@ hln <- cbind(hln, vpt(x = hln$yes, t = hln$total, FUN = prop.test, cn = c('prop'
 # Figure 1
 # --------
 
-tiff('Fig1.tiff', height = 9, width = 5.5, units = 'in', res = 600, family = 'Tahoma')
+tiff('Fig1.tiff', height = 8, width = 5, units = 'in', res = 600, family = 'Tahoma')
 
 par(mfrow = c(3, 1), mar = c(3, 5, 3, 12), xpd = NA)
 
