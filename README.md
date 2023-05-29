@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This repository includes code and data for the article
+This repository includes code and data for the article:
+
+Dan Lewer and others, Opioid injection-associated bacterial infections in England, 2002-2021: a time series analysis of seasonal variation and the impact of COVID-19, Clinical Infectious Diseases, 2023, ciad144, [https://doi.org/10.1093/cid/ciad144](https://doi.org/10.1093/cid/ciad144)
 
 ## Contents
 
