@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This repository includes code and data for the article
+
 ## Contents
 
 1. [SQL queries](https://github.com/danlewer/irid_trends/tree/main/sql_queries) for extracting data from Hospital Episode Statistics
